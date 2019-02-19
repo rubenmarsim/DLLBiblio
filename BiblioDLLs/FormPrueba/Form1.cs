@@ -16,7 +16,7 @@ namespace FormPrueba
     public partial class frmPrueba : Form
     {
         #region Variables Globales
-
+        GestionRSA.RSAClass CRSA;
         #endregion
 
         #region Constructores
@@ -36,13 +36,29 @@ namespace FormPrueba
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void frmPrueba_Load(object sender, EventArgs e)
-        {            
-            
+        {
+            CRSA = new GestionRSA.RSAClass();
+        }
+        private void btnCreateRSAKeys_Click(object sender, EventArgs e)
+        {
+            CRSA.CreateAndWriteRSAKeys();
+        }
+
+        private void btnReadRSAKeys_Click(object sender, EventArgs e)
+        {
+            CRSA.ReadRSAKeys();
+        }
+
+        private void btnSaveOnDB_Click(object sender, EventArgs e)
+        {
+            CRSA.GuardarPublicKeyEnDB();
         }
         #endregion
 
         #region Methods
 
         #endregion
+
+
     }
 }

@@ -39,10 +39,62 @@
         </member>
         <member name="M:ConnectionClass.ConnectDB.GetTable(System.String)">
             <summary>
-            
+            Coje la tabla que indiquemos de la DB
             </summary>
             <param name="TableName">Nombre de la tabla que queremos obtener</param>
-            <returns></returns>
+            <returns>Devuelve un dataset con la tabla que hemos indicado</returns>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.GetByID(System.String,System.String,System.Int32)">
+            <summary>
+            Falta Coment
+            </summary>
+            <param name="TableName">Nombre de la tabla en la que queremos trabajar</param>
+            <param name="FieldName">Nombre del campo en el cual queremos trabajar</param>
+            <param name="valor"></param>
+            <returns>Devuelve un dataset</returns>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.GetByID(System.String,System.Int32)">
+            <summary>
+            Falta Coment
+            </summary>
+            <param name="TableName">Nombre de la tabla en la que queremos trabajar</param>
+            <param name="valor"></param>
+            <returns>Devuelve un dataset</returns>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.Execute(System.String)">
+            <summary>
+            Executa una Query sin devolver nada, muy util para deletes, inserts, etc...
+            </summary>
+            <param name="Query">Consulta que queremos ejecutar, puede ser un insert, update, etc...</param>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.portaDadesOLEDB(System.String)">
+            <summary>
+            Falta Comment
+            </summary>
+            <param name="TableName">Nombre de la tabla en la que queremos trabajar</param>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.Update(System.Data.DataSet,System.String)">
+            <summary>
+            Compara la informacion que le pasamos en el dataset con la info de la DB y
+            cambia en la DB lo que encuentra diferente en el dataset
+            </summary>
+            <param name="dts">Dataset con la informacion modificada</param>
+            <param name="Query">Consulta a la DB</param>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.GetByQuery(System.String)">
+            <summary>
+            Coger informacion mediante una consulta
+            </summary>
+            <param name="Query">Consulta que va a definir la info que se va a mostrar</param>
+            <returns>Devuelve un Dataset con la consulta hecha</returns>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.ComprobarUser(System.String,System.String)">
+            <summary>
+            Falta Comment
+            </summary>
+            <param name="nombre"></param>
+            <param name="contra"></param>
+            <returns>Devuelve un Dataset</returns>
         </member>
     </members>
 </doc>
