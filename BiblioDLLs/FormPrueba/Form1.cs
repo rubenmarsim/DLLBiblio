@@ -36,8 +36,8 @@ namespace FormPrueba
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void frmPrueba_Load(object sender, EventArgs e)
-        {
-
+        {            
+            
         }
         #endregion
 

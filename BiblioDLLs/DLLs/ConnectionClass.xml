@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConnectionClass</name>
+    </assembly>
+    <members>
+        <member name="T:ConnectionClass.ConnectDB">
+            <summary>
+            Clase que nos permite conectarnos a una base de datos, hacer
+            consultas, etc...
+            </summary>
+        </member>
+        <member name="T:ConnectionClass.ConnectDB.DBType">
+            <summary>
+            Tipo de base de datos a la que nos queremos conectar
+            </summary>
+        </member>
+        <member name="P:ConnectionClass.ConnectDB.pConnectionString">
+            <summary>
+            String que contiene el ConnectionString
+            </summary>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.#ctor(ConnectionClass.ConnectDB.DBType,System.String)">
+            <summary>
+            Constructor de la clase ConnectDB, que nos permite conectarnos a una base de datos, hacer consultas, etc...
+            </summary>
+            <param name="DBtype">Tipo de DB a la cual nos vamos a conectar</param>
+            <param name="ConnectionString">Connection string de la DB que nos queremos conectar, normalmente se encuentra en App.config del proyecto de inicio</param>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.GetConnexionString">
+            <summary>
+            Metodo que coje el ConnectionString y lo guarda en la variable _ConnectionString
+            </summary>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.Connect">
+            <summary>
+            Abre la conexion con la Base de datos
+            </summary>
+        </member>
+        <member name="M:ConnectionClass.ConnectDB.GetTable(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="TableName">Nombre de la tabla que queremos obtener</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
