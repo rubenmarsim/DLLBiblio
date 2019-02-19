@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,9 @@ namespace ConnectionClass
         private DBType _DBType;
 
         private string _ConnectionString;
-        OleDbConnection AccessConnexion;
+        OleDbConnection _AccessConnexion;
+        SqlConnection _SQLConnexion;
+        const string _cConnectionString = "BadgesConnectionString";
         #endregion
 
         #region Constructores
@@ -38,36 +41,74 @@ namespace ConnectionClass
         #endregion
 
         #region Methods
-        public void getConnexionString()
-        {            
-            _ConnectionString = ConfigurationManager.ConnectionStrings["BadgesConnectionString"].ConnectionString;
+        public void GetConnexionString()
+        {
+            _ConnectionString = ConfigurationManager.ConnectionStrings[_cConnectionString].ConnectionString;
         }
 
         public void Connect()
         {
+            GetConnexionString();
             if (_DBType == DBType.Access)
+            {                
+                _AccessConnexion = new OleDbConnection(_ConnectionString);
+                _AccessConnexion.Open();
+            }else if (_DBType == DBType.SQL_Server)
             {
-                getConnexionString();
-                AccessConnexion = new OleDbConnection(_ConnectionString);
-                AccessConnexion.Open();
-            }            
+                _SQLConnexion = new SqlConnection(_ConnectionString);
+                _SQLConnexion.Open();
+            }
         }
 
-        public DataSet portaTaula(string nomTaula)
+        public DataSet GetTable(string nomTaula)
         {
             DataSet dtsCli = new DataSet();
+            Connect();
+            string query = "SELECT * FROM " + nomTaula;
 
             if (_DBType == DBType.Access)
             {
-                Connect();
-                string query = "SELECT * FROM " + nomTaula;
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query, _ConnectionString);                
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, _ConnectionString);
                 adapter.Fill(dtsCli, nomTaula);
             }
-
+            else if (_DBType == DBType.SQL_Server)
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, _ConnectionString);
+                adapter.Fill(dtsCli, nomTaula);
+                _SQLConnexion.Close();
+            }
             return dtsCli;
         }
+        public DataSet PortarPerID(string nomTaula, string nomCamp, int valor)
+        {
+            Connect();
+            string query = "SELECT * FROM " + nomTaula + " WHERE " + nomCamp + " = " + valor + "";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _ConnectionString);
+            DataSet dtsCli = new DataSet();
+            adapter.Fill(dtsCli, nomTaula);
+            return dtsCli;
 
+        }
+        public DataSet PortarPerID(string nomTaula, int valor)
+        {
+            Connect();
+            string queryTable = "SELECT * FROM " + nomTaula;
+            SqlDataAdapter adapterTable = new SqlDataAdapter(queryTable, _ConnectionString);
+            DataSet dtsTable = new DataSet();
+            adapterTable.Fill(dtsTable, nomTaula);
+            DataColumn[] columns;
+            columns = dtsTable.Tables[nomTaula].PrimaryKey;
+
+            string NomPK;
+            int num = columns.Count();
+            NomPK = columns[0].ColumnName;
+
+            string query = "SELECT * FROM " + nomTaula + " WHERE " + NomPK + " = " + valor + "";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _ConnectionString);
+            DataSet dtsCli = new DataSet();
+            adapter.Fill(dtsCli, nomTaula);
+            return dtsCli;
+        }
         public void Executa(string consulta)
         {
             if (_DBType == DBType.Access)
@@ -75,18 +116,35 @@ namespace ConnectionClass
                 try
                 {
                     Connect();
-                    OleDbCommand comanda = new OleDbCommand(consulta, AccessConnexion);
+                    OleDbCommand comanda = new OleDbCommand(consulta, _AccessConnexion);
                 }
                 catch (OleDbException e)
                 {
                 }
                 finally
                 {
-                    AccessConnexion.Close();
+                    _AccessConnexion.Close();
 
                 }
             }
-            
+            else if (_DBType == DBType.SQL_Server)
+            {
+                try
+                {
+                    Connect();
+                    SqlCommand comanda = new SqlCommand(consulta, _SQLConnexion);
+                    comanda.ExecuteNonQuery();
+                }
+                catch (SqlException)
+                {
+                }
+                finally
+                {
+                    _SQLConnexion.Close();
+
+                }
+            }
+
         }
 
         private void portaDadesOLEDB(string nomTaula)
@@ -117,22 +175,58 @@ namespace ConnectionClass
                 }
                 finally
                 {
-                    AccessConnexion.Close();
+                    _AccessConnexion.Close();
 
                 }
             }
-            
+            else if (_DBType == DBType.SQL_Server)
+            {
+                try
+                {
+                    Connect();
+                    SqlDataAdapter adapterDts = new SqlDataAdapter(consulta, _ConnectionString);
+                    SqlCommandBuilder sqlCommand = new SqlCommandBuilder(adapterDts);
+
+                    adapterDts.Update(dts);
+                }
+                catch (SqlException)
+                {
+
+                }
+                finally
+                {
+                    _SQLConnexion.Close();
+
+                }
+            }
+
+
         }
         public DataSet portaPerConsulta(string consultaSql)
         {
             DataSet dtsCli = new DataSet();
+            Connect();
             if (_DBType == DBType.Access)
-            {
-                Connect();
+            {                
                 OleDbDataAdapter adapter = new OleDbDataAdapter(consultaSql, _ConnectionString);
                 adapter.Fill(dtsCli, consultaSql);
             }
+            else if (_DBType == DBType.SQL_Server)
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(consultaSql, _ConnectionString);
+                adapter.Fill(dtsCli);
+            }
+                return dtsCli;
+        }
+        public DataSet ComprobarUser(string nombre, string contra)
+        {
 
+            Connect();
+            string query = "SELECT Users.*, UserCategories.DescCategory,UserCategories.AccessLevel FROM Users INNER JOIN UserCategories ON Users.idUserCategory = UserCategories.idUserCategory WHERE UserName='" + nombre + "' AND Password ='" + contra + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _ConnectionString);
+            DataSet dtsCli = new DataSet();
+            adapter.Fill(dtsCli);
+            _SQLConnexion.Close();
             return dtsCli;
         }
         #endregion
