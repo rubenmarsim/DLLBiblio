@@ -26,9 +26,17 @@ namespace ConnectionClass
             SQL_Server
         }
         private DBType _DBType;
-
+        /// <summary>
+        /// String que contiene el ConnectionString
+        /// </summary>
         private string _ConnectionString;
+        /// <summary>
+        /// Clase que vamos a usar para gestionar DB tipo Access
+        /// </summary>
         OleDbConnection _AccessConnexion;
+        /// <summary>
+        /// Clase que vamos a usar para gestionar DB tipo SQl Server
+        /// </summary>
         SqlConnection _SQLConnexion;
         #endregion
 

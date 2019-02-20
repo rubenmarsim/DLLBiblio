@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,9 +35,9 @@ namespace GestionRSA
         /// </summary>
         string _privateKey = string.Empty;
         /// <summary>
-        /// Constante con la ruta donde vamos a tener nuestros archivos encriptados
+        /// Variable con la ruta dinamica donde vamos a tener nuestros archivos
         /// </summary>
-        const string _PathArchivos = "Archivos/";
+        string _PathArchivos = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/";
         /// <summary>
         /// Constante para el uso de la extension de XML
         /// </summary>
@@ -139,6 +140,30 @@ namespace GestionRSA
         {
             _ConnectDB = new ConnectionClass.ConnectDB(ConnectionClass.ConnectDB.DBType.SQL_Server, "");
             _ConnectDB.Execute("insert into PlanetKeys (Planet, XMLKey) values ('PbcK', '" + _PathArchivos + "PublicKey" + _XMLExtension + "');");
+        }
+        /// <summary>
+        /// Falta Comentar
+        /// </summary>
+        /// <param name="txt"></param>
+        /// <param name="xmlPublic"></param>
+        /// <returns>Devuelve un array de bytes encriptados</returns>
+        public byte[] EncriptarRSA(string txt, string xmlPublic)
+        {
+            _RSA.FromXmlString(xmlPublic);
+            byte[] encrypt = _RSA.Encrypt(Encoding.ASCII.GetBytes(txt), false);
+            return encrypt;
+        }
+        /// <summary>
+        /// Falta Comentar
+        /// </summary>
+        /// <param name="txt"></param>
+        /// <param name="xmlPrivada"></param>
+        /// <returns>Devuelve un array de bytes desencriptados</returns>
+        public byte[] DesencriptarRSA(string txt, string xmlPrivada)
+        {
+            _RSA.FromXmlString(xmlPrivada);
+            byte[] dencrypt = _RSA.Decrypt(Convert.FromBase64String(txt), false);
+            return dencrypt;
         }
         #endregion
     }
