@@ -15,6 +15,21 @@
             Tipo de base de datos a la que nos queremos conectar
             </summary>
         </member>
+        <member name="F:ConnectionClass.ConnectDB._ConnectionString">
+            <summary>
+            String que contiene el ConnectionString
+            </summary>
+        </member>
+        <member name="F:ConnectionClass.ConnectDB._AccessConnexion">
+            <summary>
+            Clase que vamos a usar para gestionar DB tipo Access
+            </summary>
+        </member>
+        <member name="F:ConnectionClass.ConnectDB._SQLConnexion">
+            <summary>
+            Clase que vamos a usar para gestionar DB tipo SQl Server
+            </summary>
+        </member>
         <member name="P:ConnectionClass.ConnectDB.pConnectionString">
             <summary>
             String que contiene el ConnectionString

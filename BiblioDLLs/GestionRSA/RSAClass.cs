@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace GestionRSA
 {
+    /// <summary>
+    /// Clase para la gestion de claves RSA, crear clave publica y privada, encriptar, etc...
+    /// </summary>
     public class RSAClass
     {
         #region Variables Globales
@@ -64,7 +67,7 @@ namespace GestionRSA
 
         #region Constructores
         /// <summary>
-        /// Constructor por defecto
+        /// Constructor de la clase Gestio de RSA que nos permite crear clave publica y privada, encriptar, etc...
         /// </summary>
         public RSAClass()
         {
@@ -111,10 +114,16 @@ namespace GestionRSA
 
             if (bWriteToXML)
             {
-                ///Escribimos la clave publica en su respectivo archivo XML
-                File.WriteAllText(_PathArchivos + "PublicKey" + _XMLExtension, _publicKey);
-                ///Escribimos la clave privada en su respectivo archivo XML
-                File.WriteAllText(_PathArchivos + "PrivateKey" + _XMLExtension, _privateKey);
+                if (Directory.Exists(_PathArchivos))
+                {
+                    CreateXMLArchieves();
+                }
+                else
+                {
+                    Directory.CreateDirectory(_PathArchivos);
+                    CreateXMLArchieves();
+                }
+                
             }            
         }
         /// <summary>
@@ -164,6 +173,16 @@ namespace GestionRSA
             _RSA.FromXmlString(xmlPrivada);
             byte[] dencrypt = _RSA.Decrypt(Convert.FromBase64String(txt), false);
             return dencrypt;
+        }
+        /// <summary>
+        /// Creamos un archivo XML para cada clave y la escribimos dentro
+        /// </summary>
+        private void CreateXMLArchieves()
+        {
+            ///Escribimos la clave publica en su respectivo archivo XML
+            File.WriteAllText(_PathArchivos + "PublicKey" + _XMLExtension, _publicKey);
+            ///Escribimos la clave privada en su respectivo archivo XML
+            File.WriteAllText(_PathArchivos + "PrivateKey" + _XMLExtension, _privateKey);
         }
         #endregion
     }

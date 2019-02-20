@@ -17,6 +17,7 @@ namespace FormPrueba
     {
         #region Variables Globales
         GestionRSA.RSAClass CRSA;
+        ZIP.ZIPClass CZIP;
         #endregion
 
         #region Constructores
@@ -37,28 +38,55 @@ namespace FormPrueba
         /// <param name="e"></param>
         private void frmPrueba_Load(object sender, EventArgs e)
         {
-            CRSA = new GestionRSA.RSAClass();
+            Instancias();
         }
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton Create RSA Keys
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreateRSAKeys_Click(object sender, EventArgs e)
         {
             CRSA.CreateAndWriteRSAKeys();
         }
-
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton Read RSA Keys
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReadRSAKeys_Click(object sender, EventArgs e)
         {
             CRSA.ReadRSAKeys();
         }
-
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton Save on DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveOnDB_Click(object sender, EventArgs e)
         {
             CRSA.GuardarPublicKeyEnDB();
         }
+        private void btnZIP_Click(object sender, EventArgs e)
+        {
+            CZIP.Comprimir();
+        }
+
+        private void btnUNZIP_Click(object sender, EventArgs e)
+        {
+            CZIP.Descomprimir();
+        }
         #endregion
 
         #region Methods
+        private void Instancias()
+        {
+            CRSA = new GestionRSA.RSAClass();
+            CZIP = new ZIP.ZIPClass();
+        }
 
         #endregion
 
-
+        
     }
 }

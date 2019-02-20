@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZIP</name>
+    </assembly>
+    <members>
+        <member name="T:ZIP.ZIPClass">
+            <summary>
+            Clase para comprimir y descomprimir una carpeta con todos los archivos que contiene
+            </summary>
+        </member>
+        <member name="F:ZIP.ZIPClass._PathToCompress">
+            <summary>
+            Path donde vamos a guardar todos los archivos a comprimir
+            </summary>
+        </member>
+        <member name="F:ZIP.ZIPClass._PathCompressedArchive">
+            <summary>
+            Path donde se va a crear nuestro archivo comprimido
+            </summary>
+        </member>
+        <member name="F:ZIP.ZIPClass._PathToDecompress">
+            <summary>
+            Path donde vamos a descomprimir todos los archivos que tenemos en nuestro ZIP
+            </summary>
+        </member>
+        <member name="M:ZIP.ZIPClass.#ctor">
+            <summary>
+            Constructor de la clase ZIP, que nos permite comprimir y descomprimir una carpeta con todos los archivos que contiene
+            </summary>
+        </member>
+        <member name="M:ZIP.ZIPClass.ComprobarPaths">
+            <summary>
+            Metodo que comprueba si existen los path que vamos a usar, y si no 
+            existen los crea
+            </summary>
+        </member>
+        <member name="M:ZIP.ZIPClass.Comprimir">
+            <summary>
+            Intentamos crear el archivo comprimido y si ya esta creado lo borramos
+            y lo volvemos a crear
+            </summary>
+        </member>
+        <member name="M:ZIP.ZIPClass.Descomprimir">
+            <summary>
+            Intentamos descomprimir lo que hay en el zip, y si ya existe en la carpeta
+            donde vamos a descomprimir lo borramos y luego descomprimimos
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -21,6 +21,27 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:FormPrueba.frmPrueba.btnCreateRSAKeys_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton Create RSA Keys
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnReadRSAKeys_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton Read RSA Keys
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnSaveOnDB_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton Save on DB
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:FormPrueba.frmPrueba.components">
             <summary>
             Variable del diseñador necesaria.

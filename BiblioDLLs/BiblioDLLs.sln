@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionClass", "Connecti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionRSA", "GestionRSA\GestionRSA.csproj", "{75E68341-FD59-4609-BFEC-8B68911C02B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZIP", "ZIP\ZIP.csproj", "{E64F7FFA-8ACD-4417-846F-CDFD543BF544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{75E68341-FD59-4609-BFEC-8B68911C02B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75E68341-FD59-4609-BFEC-8B68911C02B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75E68341-FD59-4609-BFEC-8B68911C02B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

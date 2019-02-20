@@ -4,6 +4,11 @@
         <name>GestionRSA</name>
     </assembly>
     <members>
+        <member name="T:GestionRSA.RSAClass">
+            <summary>
+            Clase para la gestion de claves RSA, crear clave publica y privada, encriptar, etc...
+            </summary>
+        </member>
         <member name="F:GestionRSA.RSAClass._RSA">
             <summary>
             Clase principal que nos permite usar el RSA
@@ -32,7 +37,7 @@
         </member>
         <member name="F:GestionRSA.RSAClass._PathArchivos">
             <summary>
-            Constante con la ruta donde vamos a tener nuestros archivos encriptados
+            Variable con la ruta dinamica donde vamos a tener nuestros archivos
             </summary>
         </member>
         <member name="F:GestionRSA.RSAClass._XMLExtension">
@@ -56,9 +61,52 @@
             Variable donde vamos a guardar la clave RSA publica que vamos a leer del XML
             </summary>
         </member>
+        <member name="F:GestionRSA.RSAClass._ConnectDB">
+            <summary>
+            Clase donde tenemos la ConnectionClass
+            </summary>
+        </member>
         <member name="M:GestionRSA.RSAClass.#ctor">
             <summary>
-            Constructor por defecto
+            Constructor de la clase Gestio de RSA que nos permite crear clave publica y privada, encriptar, etc...
+            </summary>
+        </member>
+        <member name="M:GestionRSA.RSAClass.CreateAndWriteRSAKeys(System.Boolean,System.Boolean)">
+            <summary>
+            Metodo para crear y guardar las claves RSA
+            </summary>
+            <param name="IsPersistent">bool para decidir si queremos que las claves sean persistentes o no</param>
+            <param name="bWriteToXML">bool para decidir si queremos printar las claves en archivos XML</param>
+        </member>
+        <member name="M:GestionRSA.RSAClass.ReadRSAKeys">
+            <summary>
+            Leemos la clave publica desde un fichero XML
+            </summary>
+        </member>
+        <member name="M:GestionRSA.RSAClass.GuardarPublicKeyEnDB">
+            <summary>
+            Guardamos la clave publica en la DB
+            </summary>
+        </member>
+        <member name="M:GestionRSA.RSAClass.EncriptarRSA(System.String,System.String)">
+            <summary>
+            Falta Comentar
+            </summary>
+            <param name="txt"></param>
+            <param name="xmlPublic"></param>
+            <returns>Devuelve un array de bytes encriptados</returns>
+        </member>
+        <member name="M:GestionRSA.RSAClass.DesencriptarRSA(System.String,System.String)">
+            <summary>
+            Falta Comentar
+            </summary>
+            <param name="txt"></param>
+            <param name="xmlPrivada"></param>
+            <returns>Devuelve un array de bytes desencriptados</returns>
+        </member>
+        <member name="M:GestionRSA.RSAClass.CreateXMLArchieves">
+            <summary>
+            Creamos un archivo XML para cada clave y la escribimos dentro
             </summary>
         </member>
     </members>
