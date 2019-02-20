@@ -33,10 +33,14 @@
             this.btnReadRSAKeys = new System.Windows.Forms.Button();
             this.btnCreateRSAKeys = new System.Windows.Forms.Button();
             this.grpBoxZIP = new System.Windows.Forms.GroupBox();
-            this.btnZIP = new System.Windows.Forms.Button();
             this.btnUNZIP = new System.Windows.Forms.Button();
+            this.btnZIP = new System.Windows.Forms.Button();
+            this.grpBoxGestionXMLs = new System.Windows.Forms.GroupBox();
+            this.btnSimetricEncrypt = new System.Windows.Forms.Button();
+            this.btnSimetricDecrypt = new System.Windows.Forms.Button();
             this.grpBoxRSA.SuspendLayout();
             this.grpBoxZIP.SuspendLayout();
+            this.grpBoxGestionXMLs.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoxRSA
@@ -92,16 +96,6 @@
             this.grpBoxZIP.TabStop = false;
             this.grpBoxZIP.Text = "ZIP y UNZIP";
             // 
-            // btnZIP
-            // 
-            this.btnZIP.Location = new System.Drawing.Point(7, 32);
-            this.btnZIP.Name = "btnZIP";
-            this.btnZIP.Size = new System.Drawing.Size(87, 23);
-            this.btnZIP.TabIndex = 0;
-            this.btnZIP.Text = "Compress";
-            this.btnZIP.UseVisualStyleBackColor = true;
-            this.btnZIP.Click += new System.EventHandler(this.btnZIP_Click);
-            // 
             // btnUNZIP
             // 
             this.btnUNZIP.Location = new System.Drawing.Point(7, 70);
@@ -112,11 +106,51 @@
             this.btnUNZIP.UseVisualStyleBackColor = true;
             this.btnUNZIP.Click += new System.EventHandler(this.btnUNZIP_Click);
             // 
+            // btnZIP
+            // 
+            this.btnZIP.Location = new System.Drawing.Point(7, 32);
+            this.btnZIP.Name = "btnZIP";
+            this.btnZIP.Size = new System.Drawing.Size(87, 23);
+            this.btnZIP.TabIndex = 0;
+            this.btnZIP.Text = "Compress";
+            this.btnZIP.UseVisualStyleBackColor = true;
+            this.btnZIP.Click += new System.EventHandler(this.btnZIP_Click);
+            // 
+            // grpBoxGestionXMLs
+            // 
+            this.grpBoxGestionXMLs.Controls.Add(this.btnSimetricDecrypt);
+            this.grpBoxGestionXMLs.Controls.Add(this.btnSimetricEncrypt);
+            this.grpBoxGestionXMLs.Location = new System.Drawing.Point(241, 12);
+            this.grpBoxGestionXMLs.Name = "grpBoxGestionXMLs";
+            this.grpBoxGestionXMLs.Size = new System.Drawing.Size(200, 113);
+            this.grpBoxGestionXMLs.TabIndex = 2;
+            this.grpBoxGestionXMLs.TabStop = false;
+            this.grpBoxGestionXMLs.Text = "Gestion XMLs";
+            // 
+            // btnSimetricEncrypt
+            // 
+            this.btnSimetricEncrypt.Location = new System.Drawing.Point(7, 20);
+            this.btnSimetricEncrypt.Name = "btnSimetricEncrypt";
+            this.btnSimetricEncrypt.Size = new System.Drawing.Size(98, 23);
+            this.btnSimetricEncrypt.TabIndex = 0;
+            this.btnSimetricEncrypt.Text = "SimetricEncrypt";
+            this.btnSimetricEncrypt.UseVisualStyleBackColor = true;
+            // 
+            // btnSimetricDecrypt
+            // 
+            this.btnSimetricDecrypt.Location = new System.Drawing.Point(7, 50);
+            this.btnSimetricDecrypt.Name = "btnSimetricDecrypt";
+            this.btnSimetricDecrypt.Size = new System.Drawing.Size(98, 23);
+            this.btnSimetricDecrypt.TabIndex = 1;
+            this.btnSimetricDecrypt.Text = "SimetricDecrypt";
+            this.btnSimetricDecrypt.UseVisualStyleBackColor = true;
+            // 
             // frmPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grpBoxGestionXMLs);
             this.Controls.Add(this.grpBoxZIP);
             this.Controls.Add(this.grpBoxRSA);
             this.Name = "frmPrueba";
@@ -124,6 +158,7 @@
             this.Load += new System.EventHandler(this.frmPrueba_Load);
             this.grpBoxRSA.ResumeLayout(false);
             this.grpBoxZIP.ResumeLayout(false);
+            this.grpBoxGestionXMLs.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -137,6 +172,9 @@
         private System.Windows.Forms.GroupBox grpBoxZIP;
         private System.Windows.Forms.Button btnUNZIP;
         private System.Windows.Forms.Button btnZIP;
+        private System.Windows.Forms.GroupBox grpBoxGestionXMLs;
+        private System.Windows.Forms.Button btnSimetricEncrypt;
+        private System.Windows.Forms.Button btnSimetricDecrypt;
     }
 }
 
