@@ -40,6 +40,8 @@
             this.btnSimetricEncrypt = new System.Windows.Forms.Button();
             this.grpBoxMail = new System.Windows.Forms.GroupBox();
             this.btnFormMail = new System.Windows.Forms.Button();
+            this.btnAsimetricEncrypt = new System.Windows.Forms.Button();
+            this.btnAsimetricDecrypt = new System.Windows.Forms.Button();
             this.grpBoxRSA.SuspendLayout();
             this.grpBoxZIP.SuspendLayout();
             this.grpBoxGestionXMLs.SuspendLayout();
@@ -121,11 +123,13 @@
             // 
             // grpBoxGestionXMLs
             // 
+            this.grpBoxGestionXMLs.Controls.Add(this.btnAsimetricDecrypt);
+            this.grpBoxGestionXMLs.Controls.Add(this.btnAsimetricEncrypt);
             this.grpBoxGestionXMLs.Controls.Add(this.btnSimetricDecrypt);
             this.grpBoxGestionXMLs.Controls.Add(this.btnSimetricEncrypt);
             this.grpBoxGestionXMLs.Location = new System.Drawing.Point(241, 12);
             this.grpBoxGestionXMLs.Name = "grpBoxGestionXMLs";
-            this.grpBoxGestionXMLs.Size = new System.Drawing.Size(200, 113);
+            this.grpBoxGestionXMLs.Size = new System.Drawing.Size(179, 113);
             this.grpBoxGestionXMLs.TabIndex = 2;
             this.grpBoxGestionXMLs.TabStop = false;
             this.grpBoxGestionXMLs.Text = "Gestion XMLs";
@@ -138,6 +142,7 @@
             this.btnSimetricDecrypt.TabIndex = 1;
             this.btnSimetricDecrypt.Text = "SimetricDecrypt";
             this.btnSimetricDecrypt.UseVisualStyleBackColor = true;
+            this.btnSimetricDecrypt.Click += new System.EventHandler(this.btnSimetricDecrypt_Click);
             // 
             // btnSimetricEncrypt
             // 
@@ -147,11 +152,12 @@
             this.btnSimetricEncrypt.TabIndex = 0;
             this.btnSimetricEncrypt.Text = "SimetricEncrypt";
             this.btnSimetricEncrypt.UseVisualStyleBackColor = true;
+            this.btnSimetricEncrypt.Click += new System.EventHandler(this.btnSimetricEncrypt_Click);
             // 
             // grpBoxMail
             // 
             this.grpBoxMail.Controls.Add(this.btnFormMail);
-            this.grpBoxMail.Location = new System.Drawing.Point(537, 32);
+            this.grpBoxMail.Location = new System.Drawing.Point(426, 12);
             this.grpBoxMail.Name = "grpBoxMail";
             this.grpBoxMail.Size = new System.Drawing.Size(89, 52);
             this.grpBoxMail.TabIndex = 3;
@@ -167,6 +173,26 @@
             this.btnFormMail.Text = "Form Mail";
             this.btnFormMail.UseVisualStyleBackColor = true;
             this.btnFormMail.Click += new System.EventHandler(this.btnFormMail_Click);
+            // 
+            // btnAsimetricEncrypt
+            // 
+            this.btnAsimetricEncrypt.Location = new System.Drawing.Point(7, 80);
+            this.btnAsimetricEncrypt.Name = "btnAsimetricEncrypt";
+            this.btnAsimetricEncrypt.Size = new System.Drawing.Size(98, 23);
+            this.btnAsimetricEncrypt.TabIndex = 2;
+            this.btnAsimetricEncrypt.Text = "AsimetricEncrypt";
+            this.btnAsimetricEncrypt.UseVisualStyleBackColor = true;
+            this.btnAsimetricEncrypt.Click += new System.EventHandler(this.btnAsimetricEncrypt_Click);
+            // 
+            // btnAsimetricDecrypt
+            // 
+            this.btnAsimetricDecrypt.Location = new System.Drawing.Point(111, 20);
+            this.btnAsimetricDecrypt.Name = "btnAsimetricDecrypt";
+            this.btnAsimetricDecrypt.Size = new System.Drawing.Size(61, 83);
+            this.btnAsimetricDecrypt.TabIndex = 3;
+            this.btnAsimetricDecrypt.Text = "AsimetricDecrypt";
+            this.btnAsimetricDecrypt.UseVisualStyleBackColor = true;
+            this.btnAsimetricDecrypt.Click += new System.EventHandler(this.btnAsimetricDecrypt_Click);
             // 
             // frmPrueba
             // 
@@ -202,6 +228,8 @@
         private System.Windows.Forms.Button btnSimetricDecrypt;
         private System.Windows.Forms.GroupBox grpBoxMail;
         private System.Windows.Forms.Button btnFormMail;
+        private System.Windows.Forms.Button btnAsimetricDecrypt;
+        private System.Windows.Forms.Button btnAsimetricEncrypt;
     }
 }
 

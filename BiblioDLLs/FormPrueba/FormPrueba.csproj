@@ -102,6 +102,10 @@
       <Project>{75e68341-fd59-4609-bfec-8b68911c02b7}</Project>
       <Name>GestionRSA</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GestionXML\GestionXML.csproj">
+      <Project>{8f537617-cd17-4b14-a80b-db5eae9b2ddf}</Project>
+      <Name>GestionXML</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZIP\ZIP.csproj">
       <Project>{e64f7ffa-8acd-4417-846f-cdfd543bf544}</Project>
       <Name>ZIP</Name>

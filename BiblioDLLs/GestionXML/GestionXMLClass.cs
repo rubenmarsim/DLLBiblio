@@ -20,6 +20,8 @@ namespace GestionXML
         #region Variables Globales
         RijndaelManaged _Key = null;
         string _Path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/";
+        string _PathEncrypt = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/Encriptados/";
+        string _PathDecrypt = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/Desencriptados/";
         const string _Filename = "Users.xml";
         bool _bEncrypt = true;
         bool _bDecrypt = true;
@@ -347,14 +349,14 @@ namespace GestionXML
                     if (bEncrypt)
                     {
                         EncriptarXML(xmlDoc, "User", "", rsaKey, "rsaKey");
-                        xmlDoc.Save(_Path + "AEncryptedDoc.xml");
+                        xmlDoc.Save(_PathEncrypt + "AEncryptedDoc.xml");
 
                     }
                     if (bDecrypt)
                     {
-                        xmlDoc.Load(_Path + "AEncryptedDoc.xml");
+                        xmlDoc.Load(_PathEncrypt + "AEncryptedDoc.xml");
                         DesencriptarXML(xmlDoc, rsaKey, "rsaKey");
-                        xmlDoc.Save(_Path + "ADecryptedDoc.xml");
+                        xmlDoc.Save(_PathDecrypt + "ADecryptedDoc.xml");
                     }
                 }
                 catch (Exception e)
@@ -374,14 +376,14 @@ namespace GestionXML
                     if (bEncrypt)
                     {
                         EncriptarXML(xmlDoc, "User", _Key);
-                        xmlDoc.Save(_Path + "SEncryptedDoc.xml");
+                        xmlDoc.Save(_PathEncrypt + "SEncryptedDoc.xml");
 
                     }
                     if (bDecrypt)
                     {
-                        xmlDoc.Load(_Path + "SEncryptedDoc.xml");
+                        xmlDoc.Load(_PathEncrypt + "SEncryptedDoc.xml");
                         DesencriptarXML(xmlDoc, _Key);
-                        xmlDoc.Save(_Path + "SDecryptedDoc.xml");
+                        xmlDoc.Save(_PathDecrypt + "SDecryptedDoc.xml");
                     }
                 }
                 catch (Exception e)

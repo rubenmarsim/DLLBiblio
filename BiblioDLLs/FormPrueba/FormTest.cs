@@ -18,6 +18,8 @@ namespace FormPrueba
         #region Variables Globales
         GestionRSA.RSAClass CRSA;
         ZIP.ZIPClass CZIP;
+        GestionXML.GestionXMLClass CGestionXML;
+        FormMail formMail;
         #endregion
 
         #region Constructores
@@ -76,6 +78,25 @@ namespace FormPrueba
         {
             CZIP.Descomprimir();
         }
+        private void btnSimetricEncrypt_Click(object sender, EventArgs e)
+        {
+            CGestionXML.OPTGestionXML(false, true, false);
+        }
+
+        private void btnAsimetricEncrypt_Click(object sender, EventArgs e)
+        {
+            CGestionXML.OPTGestionXML(true, true, false);
+        }
+
+        private void btnSimetricDecrypt_Click(object sender, EventArgs e)
+        {
+            CGestionXML.OPTGestionXML(false, false, true);
+        }
+
+        private void btnAsimetricDecrypt_Click(object sender, EventArgs e)
+        {
+            CGestionXML.OPTGestionXML(true, false, true);
+        }
         /// <summary>
         /// Se ejecuta cuando pulsamos el boton FormMail, esto llama a otro
         /// formulario donde nos pide los datos para enviar el correo
@@ -84,17 +105,22 @@ namespace FormPrueba
         /// <param name="e"></param>
         private void btnFormMail_Click(object sender, EventArgs e)
         {
-            FormMail formMail = new FormMail();
+            formMail = new FormMail();
             formMail.Show();
         }
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Instanciamos las clases de las dlls que vamos a usar
+        /// </summary>
         private void Instancias()
         {
             CRSA = new GestionRSA.RSAClass();
             CZIP = new ZIP.ZIPClass();
+            CGestionXML = new GestionXML.GestionXMLClass();
         }
+
 
 
         #endregion

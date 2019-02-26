@@ -77,6 +77,11 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:FormPrueba.frmPrueba.Instancias">
+            <summary>
+            Instanciamos las clases de las dlls que vamos a usar
+            </summary>
+        </member>
         <member name="F:FormPrueba.frmPrueba.components">
             <summary>
             Variable del diseñador necesaria.

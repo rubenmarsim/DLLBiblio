@@ -20,6 +20,8 @@ namespace GestionCorreo
         #region Variables Globales
         RijndaelManaged key = null;
         string _Path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/";
+        string _PathEncrypt = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/Encriptados/";
+        string _PathDecrypt = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/Desencriptados/";
         const string _Filename = "Users.xml";
         GestionXML.GestionXMLClass CGestionXML = null;
         #endregion
@@ -140,7 +142,7 @@ namespace GestionCorreo
 
             try
             {
-                xmlDoc.Load(_Path + "AEncryptedDoc.xml");
+                xmlDoc.Load(_PathEncrypt + "AEncryptedDoc.xml");
                 CGestionXML.DesencriptarXML(xmlDoc, rsaKey, "rsaKey");
                 Enviador = xmlDoc.GetElementsByTagName("UserId").Item(0).FirstChild.Value.ToString();
                 Contraseña = xmlDoc.GetElementsByTagName("Password").Item(0).FirstChild.Value.ToString();
