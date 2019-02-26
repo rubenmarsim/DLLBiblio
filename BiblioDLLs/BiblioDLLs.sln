@@ -5,17 +5,9 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPrueba", "FormPrueba\FormPrueba.csproj", "{435035C2-2E15-4216-9A29-5FE91B7639A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionClass", "ConnectionClass\ConnectionClass.csproj", "{D1EAB7D2-C86F-4D70-8221-3F6D69704297}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionRSA", "GestionRSA\GestionRSA.csproj", "{75E68341-FD59-4609-BFEC-8B68911C02B7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZIP", "ZIP\ZIP.csproj", "{E64F7FFA-8ACD-4417-846F-CDFD543BF544}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionXML", "GestionXML\GestionXML.csproj", "{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCorreo", "GestionCorreo\GestionCorreo.csproj", "{DE92AF4C-59D0-4610-BC97-19A80275BB5B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaitForms", "WaitForms\WaitForms.csproj", "{8C02E022-3B18-4D35-8E57-DB8697DD268F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion", "Gestion\Gestion.csproj", "{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,30 +19,14 @@ Global
 		{435035C2-2E15-4216-9A29-5FE91B7639A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{435035C2-2E15-4216-9A29-5FE91B7639A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{435035C2-2E15-4216-9A29-5FE91B7639A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1EAB7D2-C86F-4D70-8221-3F6D69704297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1EAB7D2-C86F-4D70-8221-3F6D69704297}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1EAB7D2-C86F-4D70-8221-3F6D69704297}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1EAB7D2-C86F-4D70-8221-3F6D69704297}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75E68341-FD59-4609-BFEC-8B68911C02B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75E68341-FD59-4609-BFEC-8B68911C02B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75E68341-FD59-4609-BFEC-8B68911C02B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75E68341-FD59-4609-BFEC-8B68911C02B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E64F7FFA-8ACD-4417-846F-CDFD543BF544}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

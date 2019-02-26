@@ -25,6 +25,11 @@
               Busca un recurso adaptado de tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="T:WaitForms.SimpleWF.CSimpleWF">
+            <summary>
+            Clase 
+            </summary>
+        </member>
         <member name="M:WaitForms.SimpleWF.CSimpleWF.Show">
             <summary>
             显示等待框
@@ -55,6 +60,11 @@
         <member name="P:WaitForms.SimpleWF.ResourcesWaitForms.timg11">
             <summary>
               Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:WaitForms.SimpleWF.SimpleWF">
+            <summary>
+            Form que 
             </summary>
         </member>
         <member name="F:WaitForms.SimpleWF.SimpleWF.components">

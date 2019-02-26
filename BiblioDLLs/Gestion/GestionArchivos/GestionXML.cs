@@ -7,15 +7,15 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml;
+using System.Windows.Forms;
 
-namespace GestionXML
+namespace Gestion.GestionArchivos
 {
     /// <summary>
     /// Clase para la gestio de correos, envia correos, encripta y desencripta XMLs
     /// </summary>
-    public class GestionXMLClass
+    public class GestionXML
     {
         #region Variables Globales
         RijndaelManaged _Key = null;
@@ -32,7 +32,7 @@ namespace GestionXML
         /// Constructor de la clase GestionXMLClass que nos permite encriptar y
         /// desencriptar XMLs
         /// </summary>
-        public GestionXMLClass()
+        public GestionXML()
         {
 
         }

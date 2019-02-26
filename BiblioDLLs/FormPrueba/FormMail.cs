@@ -16,7 +16,7 @@ namespace FormPrueba
     public partial class FormMail : Form
     {
         #region Variables Globales
-        GestionCorreo.GestionMail CGestorCorreo;
+        Gestion.GestionMail CGestorCorreo;
         #endregion
 
         #region Constructores
@@ -32,7 +32,7 @@ namespace FormPrueba
         #region Events
         private void FormMail_Load(object sender, EventArgs e)
         {
-            CGestorCorreo = new GestionCorreo.GestionMail();
+            CGestorCorreo = new Gestion.GestionMail();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)

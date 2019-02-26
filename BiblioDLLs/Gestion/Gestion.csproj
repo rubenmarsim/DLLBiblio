@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75E68341-FD59-4609-BFEC-8B68911C02B7}</ProjectGuid>
+    <ProjectGuid>{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GestionRSA</RootNamespace>
-    <AssemblyName>GestionRSA</AssemblyName>
+    <RootNamespace>Gestion</RootNamespace>
+    <AssemblyName>Gestion</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\DLLs\GestionRSA.xml</DocumentationFile>
+    <DocumentationFile>..\DLLs\Gestion.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,7 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,14 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RSAClass.cs" />
+    <Compile Include="DBConnectionClass.cs" />
+    <Compile Include="GestionArchivos\GestionXML.cs" />
+    <Compile Include="GestionArchivos\ZIPClass.cs" />
+    <Compile Include="GestionClaves\RSAClass.cs" />
+    <Compile Include="GestionMail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConnectionClass\ConnectionClass.csproj">
-      <Project>{d1eab7d2-c86f-4d70-8221-3f6d69704297}</Project>
-      <Name>ConnectionClass</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

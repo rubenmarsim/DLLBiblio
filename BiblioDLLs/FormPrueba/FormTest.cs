@@ -16,9 +16,9 @@ namespace FormPrueba
     public partial class frmPrueba : Form
     {
         #region Variables Globales
-        GestionRSA.RSAClass CRSA;
-        ZIP.ZIPClass CZIP;
-        GestionXML.GestionXMLClass CGestionXML;
+        Gestion.GestionClaves.RSAClass CRSA;
+        Gestion.GestionArchivos.ZIPClass CZIP;
+        Gestion.GestionArchivos.GestionXML CGestionXML;
         FormMail formMail;
         WaitForms.SimpleWF.CSimpleWF SimpleWF;
         #endregion
@@ -155,9 +155,9 @@ namespace FormPrueba
         /// </summary>
         private void Instancias()
         {
-            CRSA = new GestionRSA.RSAClass();
-            CZIP = new ZIP.ZIPClass();
-            CGestionXML = new GestionXML.GestionXMLClass();
+            CRSA = new Gestion.GestionClaves.RSAClass();
+            CZIP = new Gestion.GestionArchivos.ZIPClass();
+            CGestionXML = new Gestion.GestionArchivos.GestionXML();
             SimpleWF = new WaitForms.SimpleWF.CSimpleWF();
         }
         #endregion        

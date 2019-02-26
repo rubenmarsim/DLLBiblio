@@ -90,29 +90,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConnectionClass\ConnectionClass.csproj">
-      <Project>{d1eab7d2-c86f-4d70-8221-3f6d69704297}</Project>
-      <Name>ConnectionClass</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GestionCorreo\GestionCorreo.csproj">
-      <Project>{de92af4c-59d0-4610-bc97-19a80275bb5b}</Project>
-      <Name>GestionCorreo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GestionRSA\GestionRSA.csproj">
-      <Project>{75e68341-fd59-4609-bfec-8b68911c02b7}</Project>
-      <Name>GestionRSA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GestionXML\GestionXML.csproj">
-      <Project>{8f537617-cd17-4b14-a80b-db5eae9b2ddf}</Project>
-      <Name>GestionXML</Name>
+    <ProjectReference Include="..\Gestion\Gestion.csproj">
+      <Project>{c48ed5d8-8265-4f54-91a1-ef1b21c64bed}</Project>
+      <Name>Gestion</Name>
     </ProjectReference>
     <ProjectReference Include="..\WaitForms\WaitForms.csproj">
       <Project>{8c02e022-3b18-4d35-8e57-db8697dd268f}</Project>
       <Name>WaitForms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ZIP\ZIP.csproj">
-      <Project>{e64f7ffa-8acd-4417-846f-cdfd543bf544}</Project>
-      <Name>ZIP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

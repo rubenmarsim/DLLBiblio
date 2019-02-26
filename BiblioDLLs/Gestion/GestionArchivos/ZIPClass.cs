@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ZIP
+namespace Gestion.GestionArchivos
 {
     /// <summary>
     /// Clase para comprimir y descomprimir una carpeta con todos los archivos que contiene
@@ -19,7 +19,7 @@ namespace ZIP
         /// <summary>
         /// Path donde vamos a guardar todos los archivos a comprimir
         /// </summary>
-        string _PathToCompress = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+"/Archivos/Compress";
+        string _PathToCompress = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/Compress";
         /// <summary>
         /// Path donde se va a crear nuestro archivo comprimido
         /// </summary>
@@ -64,7 +64,7 @@ namespace ZIP
         {
             ComprobarPaths();
             try
-            {                
+            {
                 ZipFile.CreateFromDirectory(_PathToCompress, _PathCompressedArchive);
             }
             catch (IOException)

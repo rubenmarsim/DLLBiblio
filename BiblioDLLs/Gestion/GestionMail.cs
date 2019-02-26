@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace GestionCorreo
+namespace Gestion
 {
     /// <summary>
     /// Clase para la gestion de correos
@@ -23,7 +23,7 @@ namespace GestionCorreo
         string _PathEncrypt = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/Encriptados/";
         string _PathDecrypt = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/Desencriptados/";
         const string _Filename = "Users.xml";
-        GestionXML.GestionXMLClass CGestionXML = null;
+        GestionArchivos.GestionXML CGestionXML = null;
         #endregion
 
         #region Propiedades
@@ -126,7 +126,7 @@ namespace GestionCorreo
         /// </summary>
         private void GetCredencials()
         {
-            CGestionXML = new GestionXML.GestionXMLClass();
+            CGestionXML = new GestionArchivos.GestionXML();
             key = new RijndaelManaged();
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.PreserveWhitespace = true;

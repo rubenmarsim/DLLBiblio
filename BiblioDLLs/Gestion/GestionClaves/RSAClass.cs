@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GestionRSA
+namespace Gestion.GestionClaves
 {
     /// <summary>
     /// Clase para la gestion de claves RSA, crear clave publica y privada, encriptar, etc...
@@ -61,7 +61,7 @@ namespace GestionRSA
         /// <summary>
         /// Clase donde tenemos la ConnectionClass
         /// </summary>
-        ConnectionClass.ConnectDB _ConnectDB;
+        DBConnectionClass _ConnectDB;
 
         #endregion
 
@@ -123,8 +123,8 @@ namespace GestionRSA
                     Directory.CreateDirectory(_PathArchivos);
                     CreateXMLArchieves();
                 }
-                
-            }            
+
+            }
         }
         /// <summary>
         /// Leemos la clave publica desde un fichero XML
@@ -147,7 +147,7 @@ namespace GestionRSA
         /// </summary>
         public void GuardarPublicKeyEnDB()
         {
-            _ConnectDB = new ConnectionClass.ConnectDB(ConnectionClass.ConnectDB.DBType.SQL_Server, "");
+            _ConnectDB = new DBConnectionClass(DBConnectionClass.DBType.SQL_Server, "");
             _ConnectDB.Execute("insert into PlanetKeys (Planet, XMLKey) values ('PbcK', '" + _PathArchivos + "PublicKey" + _XMLExtension + "');");
         }
         /// <summary>

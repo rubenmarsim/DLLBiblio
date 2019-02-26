@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("GestionRSA")]
+[assembly: AssemblyTitle("Gestion")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GestionRSA")]
+[assembly: AssemblyProduct("Gestion")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("75e68341-fd59-4609-bfec-8b68911c02b7")]
+[assembly: Guid("c48ed5d8-8265-4f54-91a1-ef1b21c64bed")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

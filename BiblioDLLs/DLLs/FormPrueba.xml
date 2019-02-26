@@ -121,7 +121,8 @@
         </member>
         <member name="M:FormPrueba.frmPrueba.btnSimpleWaitForm_Click(System.Object,System.EventArgs)">
             <summary>
-            Se ejecuta cuando pulsamos el boton Procesos
+            Se ejecuta cuando pulsamos el boton Procesos, el cual muestra el waitform 
+            y un messagebox para que de tiempo a ver el form
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

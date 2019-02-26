@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gestion</name>
+    </assembly>
+    <members>
+        <member name="T:Gestion.DBConnectionClass">
+            <summary>
+            Clase que nos permite conectarnos a una base de datos, hacer
+            consultas, etc...
+            </summary>
+        </member>
+        <member name="T:Gestion.DBConnectionClass.DBType">
+            <summary>
+            Tipo de base de datos a la que nos queremos conectar
+            </summary>
+        </member>
+        <member name="F:Gestion.DBConnectionClass._ConnectionString">
+            <summary>
+            String que contiene el ConnectionString
+            </summary>
+        </member>
+        <member name="F:Gestion.DBConnectionClass._AccessConnexion">
+            <summary>
+            Clase que vamos a usar para gestionar DB tipo Access
+            </summary>
+        </member>
+        <member name="F:Gestion.DBConnectionClass._SQLConnexion">
+            <summary>
+            Clase que vamos a usar para gestionar DB tipo SQl Server
+            </summary>
+        </member>
+        <member name="P:Gestion.DBConnectionClass.pConnectionString">
+            <summary>
+            String que contiene el ConnectionString
+            </summary>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.#ctor(Gestion.DBConnectionClass.DBType,System.String)">
+            <summary>
+            Constructor de la clase ConnectDB, que nos permite conectarnos a una base de datos, hacer consultas, etc...
+            </summary>
+            <param name="DBtype">Tipo de DB a la cual nos vamos a conectar</param>
+            <param name="ConnectionString">Connection string de la DB que nos queremos conectar, normalmente se encuentra en App.config del proyecto de inicio</param>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.GetConnexionString">
+            <summary>
+            Metodo que coje el ConnectionString y lo guarda en la variable _ConnectionString
+            </summary>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.Connect">
+            <summary>
+            Abre la conexion con la Base de datos
+            </summary>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.GetTable(System.String)">
+            <summary>
+            Coje la tabla que indiquemos de la DB
+            </summary>
+            <param name="TableName">Nombre de la tabla que queremos obtener</param>
+            <returns>Devuelve un dataset con la tabla que hemos indicado</returns>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.GetByID(System.String,System.String,System.Int32)">
+            <summary>
+            Falta Coment
+            </summary>
+            <param name="TableName">Nombre de la tabla en la que queremos trabajar</param>
+            <param name="FieldName">Nombre del campo en el cual queremos trabajar</param>
+            <param name="valor"></param>
+            <returns>Devuelve un dataset</returns>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.GetByID(System.String,System.Int32)">
+            <summary>
+            Falta Coment
+            </summary>
+            <param name="TableName">Nombre de la tabla en la que queremos trabajar</param>
+            <param name="valor"></param>
+            <returns>Devuelve un dataset</returns>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.Execute(System.String)">
+            <summary>
+            Executa una Query sin devolver nada, muy util para deletes, inserts, etc...
+            </summary>
+            <param name="Query">Consulta que queremos ejecutar, puede ser un insert, update, etc...</param>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.portaDadesOLEDB(System.String)">
+            <summary>
+            Falta Comment
+            </summary>
+            <param name="TableName">Nombre de la tabla en la que queremos trabajar</param>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.Update(System.Data.DataSet,System.String)">
+            <summary>
+            Compara la informacion que le pasamos en el dataset con la info de la DB y
+            cambia en la DB lo que encuentra diferente en el dataset
+            </summary>
+            <param name="dts">Dataset con la informacion modificada</param>
+            <param name="Query">Consulta a la DB</param>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.GetByQuery(System.String)">
+            <summary>
+            Coger informacion mediante una consulta
+            </summary>
+            <param name="Query">Consulta que va a definir la info que se va a mostrar</param>
+            <returns>Devuelve un Dataset con la consulta hecha</returns>
+        </member>
+        <member name="M:Gestion.DBConnectionClass.ComprobarUser(System.String,System.String)">
+            <summary>
+            Falta Comment
+            </summary>
+            <param name="nombre"></param>
+            <param name="contra"></param>
+            <returns>Devuelve un Dataset</returns>
+        </member>
+        <member name="T:Gestion.GestionArchivos.GestionXML">
+            <summary>
+            Clase para la gestio de correos, envia correos, encripta y desencripta XMLs
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionArchivos.GestionXML.#ctor">
+            <summary>
+            Constructor de la clase GestionXMLClass que nos permite encriptar y
+            desencriptar XMLs
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionArchivos.GestionXML.EncriptarXML(System.Xml.XmlDocument,System.String,System.Security.Cryptography.SymmetricAlgorithm)">
+            <summary>
+            Encripta un XML con clave simetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="ElementName">Nombre del elemento a encriptar</param>
+            <param name="Key">Tipo de encriptacion</param>
+        </member>
+        <member name="M:Gestion.GestionArchivos.GestionXML.EncriptarXML(System.Xml.XmlDocument,System.String,System.String,System.Security.Cryptography.RSA,System.String)">
+            <summary>
+            Encripta un XML con clave asimetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="ElementToEncrypt">Nombre del elemento a encriptar</param>
+            <param name="EncryptionElementID"></param>
+            <param name="Alg">Tipo de encriptacion</param>
+            <param name="KeyName"></param>
+        </member>
+        <member name="M:Gestion.GestionArchivos.GestionXML.DesencriptarXML(System.Xml.XmlDocument,System.Security.Cryptography.SymmetricAlgorithm)">
+            <summary>
+            Desencripta un XML con clave simetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="Alg">Tipo de encriptacion</param>
+        </member>
+        <member name="M:Gestion.GestionArchivos.GestionXML.DesencriptarXML(System.Xml.XmlDocument,System.Security.Cryptography.RSA,System.String)">
+            <summary>
+            Desencripta un XML con clave asimetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="Alg">Tipo de encriptacion</param>
+            <param name="KeyName">keyname</param>
+        </member>
+        <member name="M:Gestion.GestionArchivos.GestionXML.OPTGestionXML(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Metodo optimizado para encriptar y desencriptar con claves simetricas y asimetricas
+            </summary>
+            <param name="IsAsimetric">Determina si se ejecuta la enciptacion asimetrica o la simetrica</param>
+            <param name="bEncrypt">Determina si se encripta o no</param>
+            <param name="bDecrypt">Determina si se desencripta o no</param>
+        </member>
+        <member name="T:Gestion.GestionArchivos.ZIPClass">
+            <summary>
+            Clase para comprimir y descomprimir una carpeta con todos los archivos que contiene
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionArchivos.ZIPClass._PathToCompress">
+            <summary>
+            Path donde vamos a guardar todos los archivos a comprimir
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionArchivos.ZIPClass._PathCompressedArchive">
+            <summary>
+            Path donde se va a crear nuestro archivo comprimido
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionArchivos.ZIPClass._PathToDecompress">
+            <summary>
+            Path donde vamos a descomprimir todos los archivos que tenemos en nuestro ZIP
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionArchivos.ZIPClass.#ctor">
+            <summary>
+            Constructor de la clase ZIP, que nos permite comprimir y descomprimir una carpeta con todos los archivos que contiene
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionArchivos.ZIPClass.ComprobarPaths">
+            <summary>
+            Metodo que comprueba si existen los path que vamos a usar, y si no 
+            existen los crea
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionArchivos.ZIPClass.Comprimir">
+            <summary>
+            Intentamos crear el archivo comprimido y si ya esta creado lo borramos
+            y lo volvemos a crear
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionArchivos.ZIPClass.Descomprimir">
+            <summary>
+            Intentamos descomprimir lo que hay en el zip, y si ya existe en la carpeta
+            donde vamos a descomprimir lo borramos y luego descomprimimos
+            </summary>
+        </member>
+        <member name="T:Gestion.GestionClaves.RSAClass">
+            <summary>
+            Clase para la gestion de claves RSA, crear clave publica y privada, encriptar, etc...
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._RSA">
+            <summary>
+            Clase principal que nos permite usar el RSA
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._RSAEnc">
+            <summary>
+            Clase principal que nos permite usar el RSA, en este caso lo vamos a usar 
+            para guardar la clave que leamos del XML
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._RSAParams">
+            <summary>
+            Representa los parámetros estándar para el algoritmo System.Security.Cryptography.RSA.
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._publicKey">
+            <summary>
+            Variable donde vamos a guardar la clave publica
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._privateKey">
+            <summary>
+            Variable donde vamos a guardar la clave privada
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._PathArchivos">
+            <summary>
+            Variable con la ruta dinamica donde vamos a tener nuestros archivos
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._XMLExtension">
+            <summary>
+            Constante para el uso de la extension de XML
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._CSPP">
+            <summary>
+            Objeto que contiene el KeyContainer que nos va a servir para 
+            crear claves persistentes
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._KeyName">
+            <summary>
+            Nombr que le vamos a dar al KeyContainerName
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._XMLPublicKey">
+            <summary>
+            Variable donde vamos a guardar la clave RSA publica que vamos a leer del XML
+            </summary>
+        </member>
+        <member name="F:Gestion.GestionClaves.RSAClass._ConnectDB">
+            <summary>
+            Clase donde tenemos la ConnectionClass
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionClaves.RSAClass.#ctor">
+            <summary>
+            Constructor de la clase Gestio de RSA que nos permite crear clave publica y privada, encriptar, etc...
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionClaves.RSAClass.CreateAndWriteRSAKeys(System.Boolean,System.Boolean)">
+            <summary>
+            Metodo para crear y guardar las claves RSA
+            </summary>
+            <param name="IsPersistent">bool para decidir si queremos que las claves sean persistentes o no</param>
+            <param name="bWriteToXML">bool para decidir si queremos printar las claves en archivos XML</param>
+        </member>
+        <member name="M:Gestion.GestionClaves.RSAClass.ReadRSAKeys">
+            <summary>
+            Leemos la clave publica desde un fichero XML
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionClaves.RSAClass.GuardarPublicKeyEnDB">
+            <summary>
+            Guardamos la clave publica en la DB
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionClaves.RSAClass.EncriptarRSA(System.String,System.String)">
+            <summary>
+            Falta Comentar
+            </summary>
+            <param name="txt"></param>
+            <param name="xmlPublic"></param>
+            <returns>Devuelve un array de bytes encriptados</returns>
+        </member>
+        <member name="M:Gestion.GestionClaves.RSAClass.DesencriptarRSA(System.String,System.String)">
+            <summary>
+            Falta Comentar
+            </summary>
+            <param name="txt"></param>
+            <param name="xmlPrivada"></param>
+            <returns>Devuelve un array de bytes desencriptados</returns>
+        </member>
+        <member name="M:Gestion.GestionClaves.RSAClass.CreateXMLArchieves">
+            <summary>
+            Creamos un archivo XML para cada clave y la escribimos dentro
+            </summary>
+        </member>
+        <member name="T:Gestion.GestionMail">
+            <summary>
+            Clase para la gestion de correos
+            </summary>
+        </member>
+        <member name="P:Gestion.GestionMail.Asunto">
+            <summary>
+            Asunto del correo
+            </summary>
+        </member>
+        <member name="P:Gestion.GestionMail.Contenido">
+            <summary>
+            Contenido del correo
+            </summary>
+        </member>
+        <member name="P:Gestion.GestionMail.Destinatario">
+            <summary>
+            Destinatario del correo
+            </summary>
+        </member>
+        <member name="P:Gestion.GestionMail.Enviador">
+            <summary>
+            Correo de la persona que va a enviar el correo
+            </summary>
+        </member>
+        <member name="P:Gestion.GestionMail.Contraseña">
+            <summary>
+            Contraseña de la persona que va a enviar el correo
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionMail.#ctor">
+            <summary>
+            Constructor de la clase GestionMail que nos permite enviar correos
+            </summary>
+        </member>
+        <member name="M:Gestion.GestionMail.EnviarMail(System.String,System.String,System.String)">
+            <summary>
+            Envia un correo
+            </summary>
+            <param name="Subject">Asunto del correo</param>
+            <param name="Body">Contenido del correo</param>
+            <param name="To">Destinatario del correo</param>
+        </member>
+        <member name="M:Gestion.GestionMail.GetCredencials">
+            <summary>
+            Coje el correo y la contraseña de la persona que envia el correo
+            </summary>
+        </member>
+    </members>
+</doc>

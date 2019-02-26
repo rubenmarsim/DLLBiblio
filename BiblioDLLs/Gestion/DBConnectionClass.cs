@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConnectionClass
+namespace Gestion
 {
     /// <summary>
     /// Clase que nos permite conectarnos a una base de datos, hacer
     /// consultas, etc...
     /// </summary>
-    public class ConnectDB
+    public class DBConnectionClass
     {
         #region Variables Globales
         /// <summary>
@@ -59,7 +59,7 @@ namespace ConnectionClass
         /// </summary>
         /// <param name="DBtype">Tipo de DB a la cual nos vamos a conectar</param>
         /// <param name="ConnectionString">Connection string de la DB que nos queremos conectar, normalmente se encuentra en App.config del proyecto de inicio</param>
-        public ConnectDB(DBType DBtype, string ConnectionString)
+        public DBConnectionClass(DBType DBtype, string ConnectionString)
         {
             this._DBType = DBtype;
             this._pConnectionString = ConnectionString;
@@ -81,10 +81,11 @@ namespace ConnectionClass
         {
             GetConnexionString();
             if (_DBType == DBType.Access)
-            {                
+            {
                 _AccessConnexion = new OleDbConnection(_ConnectionString);
                 _AccessConnexion.Open();
-            }else if (_DBType == DBType.SQL_Server)
+            }
+            else if (_DBType == DBType.SQL_Server)
             {
                 _SQLConnexion = new SqlConnection(_ConnectionString);
                 _SQLConnexion.Open();
@@ -126,10 +127,10 @@ namespace ConnectionClass
             DataSet dtsCli = new DataSet();
             Connect();
             if (_DBType == DBType.SQL_Server)
-            {                
+            {
                 string query = "SELECT * FROM " + TableName + " WHERE " + FieldName + " = " + valor + "";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, _ConnectionString);                
-                adapter.Fill(dtsCli, TableName);                
+                SqlDataAdapter adapter = new SqlDataAdapter(query, _ConnectionString);
+                adapter.Fill(dtsCli, TableName);
             }
             return dtsCli;
         }
@@ -159,7 +160,7 @@ namespace ConnectionClass
                 string query = "SELECT * FROM " + TableName + " WHERE " + NomPK + " = " + valor + "";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, _ConnectionString);
                 adapter.Fill(dtsCli, TableName);
-            }                
+            }
             return dtsCli;
         }
         /// <summary>
@@ -215,7 +216,7 @@ namespace ConnectionClass
                 string query = "SELECT * FROM " + TableName;
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, _ConnectionString);
                 DataSet dtsCli = new DataSet();
-            }            
+            }
         }
         /// <summary>
         /// Compara la informacion que le pasamos en el dataset con la info de la DB y
@@ -274,7 +275,7 @@ namespace ConnectionClass
             DataSet dtsCli = new DataSet();
             Connect();
             if (_DBType == DBType.Access)
-            {                
+            {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(Query, _ConnectionString);
                 adapter.Fill(dtsCli, Query);
             }
@@ -283,7 +284,7 @@ namespace ConnectionClass
                 SqlDataAdapter adapter = new SqlDataAdapter(Query, _ConnectionString);
                 adapter.Fill(dtsCli);
             }
-                return dtsCli;
+            return dtsCli;
         }
         /// <summary>
         /// Falta Comment
