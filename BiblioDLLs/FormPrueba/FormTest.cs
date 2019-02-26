@@ -69,30 +69,56 @@ namespace FormPrueba
         {
             CRSA.GuardarPublicKeyEnDB();
         }
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton Compress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnZIP_Click(object sender, EventArgs e)
         {
             CZIP.Comprimir();
         }
-
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton Descompress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUNZIP_Click(object sender, EventArgs e)
         {
             CZIP.Descomprimir();
         }
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton SimetricEncrypt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSimetricEncrypt_Click(object sender, EventArgs e)
         {
             CGestionXML.OPTGestionXML(false, true, false);
         }
-
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton SimetricDecrypt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAsimetricEncrypt_Click(object sender, EventArgs e)
         {
             CGestionXML.OPTGestionXML(true, true, false);
         }
-
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton AsimetricEncrypt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSimetricDecrypt_Click(object sender, EventArgs e)
         {
             CGestionXML.OPTGestionXML(false, false, true);
         }
-
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton AsimetricDecrypt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAsimetricDecrypt_Click(object sender, EventArgs e)
         {
             CGestionXML.OPTGestionXML(true, false, true);
@@ -120,11 +146,6 @@ namespace FormPrueba
             CZIP = new ZIP.ZIPClass();
             CGestionXML = new GestionXML.GestionXMLClass();
         }
-
-
-
         #endregion
-
-        
     }
 }

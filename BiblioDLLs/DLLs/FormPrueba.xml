@@ -69,6 +69,48 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:FormPrueba.frmPrueba.btnZIP_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton Compress
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnUNZIP_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton Descompress
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnSimetricEncrypt_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton SimetricEncrypt
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnAsimetricEncrypt_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton SimetricDecrypt
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnSimetricDecrypt_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton AsimetricEncrypt
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnAsimetricDecrypt_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton AsimetricDecrypt
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:FormPrueba.frmPrueba.btnFormMail_Click(System.Object,System.EventArgs)">
             <summary>
             Se ejecuta cuando pulsamos el boton FormMail, esto llama a otro
