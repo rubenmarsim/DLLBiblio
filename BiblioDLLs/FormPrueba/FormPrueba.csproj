@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMail.Designer.cs">
+      <DependentUpon>FormMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMail.resx">
+      <DependentUpon>FormMail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +93,10 @@
     <ProjectReference Include="..\ConnectionClass\ConnectionClass.csproj">
       <Project>{d1eab7d2-c86f-4d70-8221-3f6d69704297}</Project>
       <Name>ConnectionClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionCorreo\GestionCorreo.csproj">
+      <Project>{de92af4c-59d0-4610-bc97-19a80275bb5b}</Project>
+      <Name>GestionCorreo</Name>
     </ProjectReference>
     <ProjectReference Include="..\GestionRSA\GestionRSA.csproj">
       <Project>{75e68341-fd59-4609-bfec-8b68911c02b7}</Project>

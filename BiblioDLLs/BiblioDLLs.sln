@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZIP", "ZIP\ZIP.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionXML", "GestionXML\GestionXML.csproj", "{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCorreo", "GestionCorreo\GestionCorreo.csproj", "{DE92AF4C-59D0-4610-BC97-19A80275BB5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F537617-CD17-4B14-A80B-DB5EAE9B2DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

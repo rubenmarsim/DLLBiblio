@@ -36,11 +36,14 @@
             this.btnUNZIP = new System.Windows.Forms.Button();
             this.btnZIP = new System.Windows.Forms.Button();
             this.grpBoxGestionXMLs = new System.Windows.Forms.GroupBox();
-            this.btnSimetricEncrypt = new System.Windows.Forms.Button();
             this.btnSimetricDecrypt = new System.Windows.Forms.Button();
+            this.btnSimetricEncrypt = new System.Windows.Forms.Button();
+            this.grpBoxMail = new System.Windows.Forms.GroupBox();
+            this.btnFormMail = new System.Windows.Forms.Button();
             this.grpBoxRSA.SuspendLayout();
             this.grpBoxZIP.SuspendLayout();
             this.grpBoxGestionXMLs.SuspendLayout();
+            this.grpBoxMail.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoxRSA
@@ -127,15 +130,6 @@
             this.grpBoxGestionXMLs.TabStop = false;
             this.grpBoxGestionXMLs.Text = "Gestion XMLs";
             // 
-            // btnSimetricEncrypt
-            // 
-            this.btnSimetricEncrypt.Location = new System.Drawing.Point(7, 20);
-            this.btnSimetricEncrypt.Name = "btnSimetricEncrypt";
-            this.btnSimetricEncrypt.Size = new System.Drawing.Size(98, 23);
-            this.btnSimetricEncrypt.TabIndex = 0;
-            this.btnSimetricEncrypt.Text = "SimetricEncrypt";
-            this.btnSimetricEncrypt.UseVisualStyleBackColor = true;
-            // 
             // btnSimetricDecrypt
             // 
             this.btnSimetricDecrypt.Location = new System.Drawing.Point(7, 50);
@@ -145,11 +139,41 @@
             this.btnSimetricDecrypt.Text = "SimetricDecrypt";
             this.btnSimetricDecrypt.UseVisualStyleBackColor = true;
             // 
+            // btnSimetricEncrypt
+            // 
+            this.btnSimetricEncrypt.Location = new System.Drawing.Point(7, 20);
+            this.btnSimetricEncrypt.Name = "btnSimetricEncrypt";
+            this.btnSimetricEncrypt.Size = new System.Drawing.Size(98, 23);
+            this.btnSimetricEncrypt.TabIndex = 0;
+            this.btnSimetricEncrypt.Text = "SimetricEncrypt";
+            this.btnSimetricEncrypt.UseVisualStyleBackColor = true;
+            // 
+            // grpBoxMail
+            // 
+            this.grpBoxMail.Controls.Add(this.btnFormMail);
+            this.grpBoxMail.Location = new System.Drawing.Point(537, 32);
+            this.grpBoxMail.Name = "grpBoxMail";
+            this.grpBoxMail.Size = new System.Drawing.Size(89, 52);
+            this.grpBoxMail.TabIndex = 3;
+            this.grpBoxMail.TabStop = false;
+            this.grpBoxMail.Text = "Gestion Mail";
+            // 
+            // btnFormMail
+            // 
+            this.btnFormMail.Location = new System.Drawing.Point(6, 19);
+            this.btnFormMail.Name = "btnFormMail";
+            this.btnFormMail.Size = new System.Drawing.Size(75, 23);
+            this.btnFormMail.TabIndex = 0;
+            this.btnFormMail.Text = "Form Mail";
+            this.btnFormMail.UseVisualStyleBackColor = true;
+            this.btnFormMail.Click += new System.EventHandler(this.btnFormMail_Click);
+            // 
             // frmPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grpBoxMail);
             this.Controls.Add(this.grpBoxGestionXMLs);
             this.Controls.Add(this.grpBoxZIP);
             this.Controls.Add(this.grpBoxRSA);
@@ -159,6 +183,7 @@
             this.grpBoxRSA.ResumeLayout(false);
             this.grpBoxZIP.ResumeLayout(false);
             this.grpBoxGestionXMLs.ResumeLayout(false);
+            this.grpBoxMail.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -175,6 +200,8 @@
         private System.Windows.Forms.GroupBox grpBoxGestionXMLs;
         private System.Windows.Forms.Button btnSimetricEncrypt;
         private System.Windows.Forms.Button btnSimetricDecrypt;
+        private System.Windows.Forms.GroupBox grpBoxMail;
+        private System.Windows.Forms.Button btnFormMail;
     }
 }
 

@@ -76,6 +76,17 @@ namespace FormPrueba
         {
             CZIP.Descomprimir();
         }
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton FormMail, esto llama a otro
+        /// formulario donde nos pide los datos para enviar el correo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFormMail_Click(object sender, EventArgs e)
+        {
+            FormMail formMail = new FormMail();
+            formMail.Show();
+        }
         #endregion
 
         #region Methods
@@ -84,6 +95,7 @@ namespace FormPrueba
             CRSA = new GestionRSA.RSAClass();
             CZIP = new ZIP.ZIPClass();
         }
+
 
         #endregion
 

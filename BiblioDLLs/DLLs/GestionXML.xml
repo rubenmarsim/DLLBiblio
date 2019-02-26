@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GestionXML</name>
+    </assembly>
+    <members>
+        <member name="T:GestionXML.GestionXMLClass">
+            <summary>
+            Clase para la gestio de correos, envia correos, encripta y desencripta XMLs
+            </summary>
+        </member>
+        <member name="M:GestionXML.GestionXMLClass.#ctor">
+            <summary>
+            Constructor de la clase GestionXMLClass que nos permite encriptar y
+            desencriptar XMLs
+            </summary>
+        </member>
+        <member name="M:GestionXML.GestionXMLClass.EncriptarXML(System.Xml.XmlDocument,System.String,System.Security.Cryptography.SymmetricAlgorithm)">
+            <summary>
+            Encripta un XML con clave simetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="ElementName">Nombre del elemento a encriptar</param>
+            <param name="Key">Tipo de encriptacion</param>
+        </member>
+        <member name="M:GestionXML.GestionXMLClass.EncriptarXML(System.Xml.XmlDocument,System.String,System.String,System.Security.Cryptography.RSA,System.String)">
+            <summary>
+            Encripta un XML con clave asimetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="ElementToEncrypt">Nombre del elemento a encriptar</param>
+            <param name="EncryptionElementID"></param>
+            <param name="Alg">Tipo de encriptacion</param>
+            <param name="KeyName"></param>
+        </member>
+        <member name="M:GestionXML.GestionXMLClass.DesencriptarXML(System.Xml.XmlDocument,System.Security.Cryptography.SymmetricAlgorithm)">
+            <summary>
+            Desencripta un XML con clave simetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="Alg">Tipo de encriptacion</param>
+        </member>
+        <member name="M:GestionXML.GestionXMLClass.DesencriptarXML(System.Xml.XmlDocument,System.Security.Cryptography.RSA,System.String)">
+            <summary>
+            Desencripta un XML con clave asimetrica
+            </summary>
+            <param name="Doc">Documento XML</param>
+            <param name="Alg">Tipo de encriptacion</param>
+            <param name="KeyName">keyname</param>
+        </member>
+        <member name="M:GestionXML.GestionXMLClass.OPTGestionXML(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Metodo optimizado para encriptar y desencriptar con claves simetricas y asimetricas
+            </summary>
+            <param name="IsAsimetric">Determina si se ejecuta la enciptacion asimetrica o la simetrica</param>
+            <param name="bEncrypt">Determina si se encripta o no</param>
+            <param name="bDecrypt">Determina si se desencripta o no</param>
+        </member>
+    </members>
+</doc>

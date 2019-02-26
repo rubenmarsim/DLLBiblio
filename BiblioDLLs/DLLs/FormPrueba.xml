@@ -4,6 +4,33 @@
         <name>FormPrueba</name>
     </assembly>
     <members>
+        <member name="T:FormPrueba.FormMail">
+            <summary>
+            Formulario para enviar correos
+            </summary>
+        </member>
+        <member name="M:FormPrueba.FormMail.#ctor">
+            <summary>
+            Contructor por defecto
+            </summary>
+        </member>
+        <member name="F:FormPrueba.FormMail.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:FormPrueba.FormMail.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:FormPrueba.FormMail.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:FormPrueba.frmPrueba">
             <summary>
             Formulario para hacer pruebas de las dlls
@@ -38,6 +65,14 @@
         <member name="M:FormPrueba.frmPrueba.btnSaveOnDB_Click(System.Object,System.EventArgs)">
             <summary>
             Se ejecuta cuando pulsamos el boton Save on DB
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FormPrueba.frmPrueba.btnFormMail_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton FormMail, esto llama a otro
+            formulario donde nos pide los datos para enviar el correo
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
