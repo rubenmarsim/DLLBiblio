@@ -25,10 +25,6 @@ namespace GestionXML
         bool _bDecrypt = true;
         #endregion
 
-        #region Properties
-
-        #endregion
-
         #region Constructores
         /// <summary>
         /// Constructor de la clase GestionXMLClass que nos permite encriptar y
