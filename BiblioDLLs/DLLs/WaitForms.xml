@@ -27,19 +27,38 @@
         </member>
         <member name="T:WaitForms.SimpleWF.CSimpleWF">
             <summary>
-            Clase 
+            Clase con los metodos necesarios para llamar al WaitForm, mediante un hilo,
+            para poder hacer un proceso largo por detras en lo que se muestra el WaitForm
             </summary>
         </member>
         <member name="M:WaitForms.SimpleWF.CSimpleWF.Show">
             <summary>
-            显示等待框
+            Lanza un hilo en el cual ejecuta el metodo LoadingProcess, que basicamente,
+            muestra el WaitForm
             </summary>
         </member>
         <member name="M:WaitForms.SimpleWF.CSimpleWF.Show(System.Windows.Forms.Form)">
             <summary>
-            显示等待框
+            Lanza un hilo en el cual ejecuta el metodo LoadingProcess, que basicamente,
+            muestra el WaitForm, y ademas se le pasa el Form padre
             </summary>
-            <param name="parent">父窗体</param>
+            <param name="parent">Form padre, el cual llama a esta clase y al WaitForm</param>
+        </member>
+        <member name="M:WaitForms.SimpleWF.CSimpleWF.Close">
+            <summary>
+            Se cierra el hilo y el Form
+            </summary>
+        </member>
+        <member name="M:WaitForms.SimpleWF.CSimpleWF.LoadingProcessEx">
+            <summary>
+            Abre el WaitForm
+            </summary>
+        </member>
+        <member name="M:WaitForms.SimpleWF.CSimpleWF.LoadingProcessEx(System.Object)">
+            <summary>
+            Abre el WaitForm y le pasa como parametro el Form padre
+            </summary>
+            <param name="parent">Form padre, el cual llama a esta clase y al WaitForm</param>
         </member>
         <member name="T:WaitForms.SimpleWF.ResourcesWaitForms">
             <summary>

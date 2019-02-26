@@ -9,48 +9,61 @@ using System.Windows.Forms;
 namespace WaitForms.SimpleWF
 {
     /// <summary>
-    /// Clase 
+    /// Clase con los metodos necesarios para llamar al WaitForm, mediante un hilo,
+    /// para poder hacer un proceso largo por detras en lo que se muestra el WaitForm
     /// </summary>
     public class CSimpleWF
     {
-        SimpleWF loadingForm;
-        Thread loadthread;
+        SimpleWF _loadingForm;
+        Thread _loadthread;
         /// <summary>
-        /// 显示等待框
+        /// Lanza un hilo en el cual ejecuta el metodo LoadingProcess, que basicamente,
+        /// muestra el WaitForm
         /// </summary>
         public void Show()
         {
-            loadthread = new Thread(new ThreadStart(LoadingProcessEx));
-            loadthread.Start();
+            _loadthread = new Thread(new ThreadStart(LoadingProcessEx));
+            _loadthread.Start();
         }
         /// <summary>
-        /// 显示等待框
+        /// Lanza un hilo en el cual ejecuta el metodo LoadingProcess, que basicamente,
+        /// muestra el WaitForm, y ademas se le pasa el Form padre
         /// </summary>
-        /// <param name="parent">父窗体</param>
+        /// <param name="parent">Form padre, el cual llama a esta clase y al WaitForm</param>
         public void Show(Form parent)
         {
-            loadthread = new Thread(new ParameterizedThreadStart(LoadingProcessEx));
-            loadthread.Start(parent);
+            _loadthread = new Thread(new ParameterizedThreadStart(LoadingProcessEx));
+            _loadthread.Start(parent);
         }
+        /// <summary>
+        /// Se cierra el hilo y el Form
+        /// </summary>
         public void Close()
         {
-            if (loadingForm != null)
+            if (_loadingForm != null)
             {
-                loadingForm.BeginInvoke(new System.Threading.ThreadStart(loadingForm.CloseLoadingForm));
-                loadingForm = null;
-                loadthread = null;
+                _loadingForm.BeginInvoke(new ThreadStart(_loadingForm.CloseLoadingForm));
+                _loadingForm = null;
+                _loadthread = null;
             }
         }
+        /// <summary>
+        /// Abre el WaitForm
+        /// </summary>
         private void LoadingProcessEx()
         {
-            loadingForm = new SimpleWF();
-            loadingForm.ShowDialog();
+            _loadingForm = new SimpleWF();
+            _loadingForm.ShowDialog();
         }
+        /// <summary>
+        /// Abre el WaitForm y le pasa como parametro el Form padre
+        /// </summary>
+        /// <param name="parent">Form padre, el cual llama a esta clase y al WaitForm</param>
         private void LoadingProcessEx(object parent)
         {
             Form Cparent = parent as Form;
-            loadingForm = new SimpleWF(Cparent);
-            loadingForm.ShowDialog();
+            _loadingForm = new SimpleWF(Cparent);
+            _loadingForm.ShowDialog();
         }
     }
 }
