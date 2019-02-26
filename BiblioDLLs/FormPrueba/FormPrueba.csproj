@@ -106,6 +106,10 @@
       <Project>{8f537617-cd17-4b14-a80b-db5eae9b2ddf}</Project>
       <Name>GestionXML</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WaitForms\WaitForms.csproj">
+      <Project>{8c02e022-3b18-4d35-8e57-db8697dd268f}</Project>
+      <Name>WaitForms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZIP\ZIP.csproj">
       <Project>{e64f7ffa-8acd-4417-846f-cdfd543bf544}</Project>
       <Name>ZIP</Name>
