@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaitForms", "WaitForms\Wait
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion", "Gestion\Gestion.csproj", "{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControls", "UserControls\UserControls.csproj", "{575B745F-8C2B-402D-9C78-3FA7C423B0E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C48ED5D8-8265-4F54-91A1-EF1B21C64BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{575B745F-8C2B-402D-9C78-3FA7C423B0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575B745F-8C2B-402D-9C78-3FA7C423B0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575B745F-8C2B-402D-9C78-3FA7C423B0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575B745F-8C2B-402D-9C78-3FA7C423B0E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
