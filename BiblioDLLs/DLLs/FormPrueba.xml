@@ -119,6 +119,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:FormPrueba.frmPrueba.btnSimpleWaitForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando pulsamos el boton Procesos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:FormPrueba.frmPrueba.Instancias">
             <summary>
             Instanciamos las clases de las dlls que vamos a usar

@@ -36,16 +36,19 @@
             this.btnUNZIP = new System.Windows.Forms.Button();
             this.btnZIP = new System.Windows.Forms.Button();
             this.grpBoxGestionXMLs = new System.Windows.Forms.GroupBox();
+            this.btnAsimetricDecrypt = new System.Windows.Forms.Button();
+            this.btnAsimetricEncrypt = new System.Windows.Forms.Button();
             this.btnSimetricDecrypt = new System.Windows.Forms.Button();
             this.btnSimetricEncrypt = new System.Windows.Forms.Button();
             this.grpBoxMail = new System.Windows.Forms.GroupBox();
             this.btnFormMail = new System.Windows.Forms.Button();
-            this.btnAsimetricEncrypt = new System.Windows.Forms.Button();
-            this.btnAsimetricDecrypt = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSimpleWaitForm = new System.Windows.Forms.Button();
             this.grpBoxRSA.SuspendLayout();
             this.grpBoxZIP.SuspendLayout();
             this.grpBoxGestionXMLs.SuspendLayout();
             this.grpBoxMail.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoxRSA
@@ -134,6 +137,26 @@
             this.grpBoxGestionXMLs.TabStop = false;
             this.grpBoxGestionXMLs.Text = "Gestion XMLs";
             // 
+            // btnAsimetricDecrypt
+            // 
+            this.btnAsimetricDecrypt.Location = new System.Drawing.Point(111, 20);
+            this.btnAsimetricDecrypt.Name = "btnAsimetricDecrypt";
+            this.btnAsimetricDecrypt.Size = new System.Drawing.Size(61, 83);
+            this.btnAsimetricDecrypt.TabIndex = 3;
+            this.btnAsimetricDecrypt.Text = "AsimetricDecrypt";
+            this.btnAsimetricDecrypt.UseVisualStyleBackColor = true;
+            this.btnAsimetricDecrypt.Click += new System.EventHandler(this.btnAsimetricDecrypt_Click);
+            // 
+            // btnAsimetricEncrypt
+            // 
+            this.btnAsimetricEncrypt.Location = new System.Drawing.Point(7, 80);
+            this.btnAsimetricEncrypt.Name = "btnAsimetricEncrypt";
+            this.btnAsimetricEncrypt.Size = new System.Drawing.Size(98, 23);
+            this.btnAsimetricEncrypt.TabIndex = 2;
+            this.btnAsimetricEncrypt.Text = "AsimetricEncrypt";
+            this.btnAsimetricEncrypt.UseVisualStyleBackColor = true;
+            this.btnAsimetricEncrypt.Click += new System.EventHandler(this.btnAsimetricEncrypt_Click);
+            // 
             // btnSimetricDecrypt
             // 
             this.btnSimetricDecrypt.Location = new System.Drawing.Point(7, 50);
@@ -174,31 +197,32 @@
             this.btnFormMail.UseVisualStyleBackColor = true;
             this.btnFormMail.Click += new System.EventHandler(this.btnFormMail_Click);
             // 
-            // btnAsimetricEncrypt
+            // groupBox1
             // 
-            this.btnAsimetricEncrypt.Location = new System.Drawing.Point(7, 80);
-            this.btnAsimetricEncrypt.Name = "btnAsimetricEncrypt";
-            this.btnAsimetricEncrypt.Size = new System.Drawing.Size(98, 23);
-            this.btnAsimetricEncrypt.TabIndex = 2;
-            this.btnAsimetricEncrypt.Text = "AsimetricEncrypt";
-            this.btnAsimetricEncrypt.UseVisualStyleBackColor = true;
-            this.btnAsimetricEncrypt.Click += new System.EventHandler(this.btnAsimetricEncrypt_Click);
+            this.groupBox1.Controls.Add(this.btnSimpleWaitForm);
+            this.groupBox1.Location = new System.Drawing.Point(426, 70);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(89, 55);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "SmplWaitForm";
             // 
-            // btnAsimetricDecrypt
+            // btnSimpleWaitForm
             // 
-            this.btnAsimetricDecrypt.Location = new System.Drawing.Point(111, 20);
-            this.btnAsimetricDecrypt.Name = "btnAsimetricDecrypt";
-            this.btnAsimetricDecrypt.Size = new System.Drawing.Size(61, 83);
-            this.btnAsimetricDecrypt.TabIndex = 3;
-            this.btnAsimetricDecrypt.Text = "AsimetricDecrypt";
-            this.btnAsimetricDecrypt.UseVisualStyleBackColor = true;
-            this.btnAsimetricDecrypt.Click += new System.EventHandler(this.btnAsimetricDecrypt_Click);
+            this.btnSimpleWaitForm.Location = new System.Drawing.Point(7, 22);
+            this.btnSimpleWaitForm.Name = "btnSimpleWaitForm";
+            this.btnSimpleWaitForm.Size = new System.Drawing.Size(75, 23);
+            this.btnSimpleWaitForm.TabIndex = 0;
+            this.btnSimpleWaitForm.Text = "Procesos";
+            this.btnSimpleWaitForm.UseVisualStyleBackColor = true;
+            this.btnSimpleWaitForm.Click += new System.EventHandler(this.btnSimpleWaitForm_Click);
             // 
             // frmPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpBoxMail);
             this.Controls.Add(this.grpBoxGestionXMLs);
             this.Controls.Add(this.grpBoxZIP);
@@ -210,6 +234,7 @@
             this.grpBoxZIP.ResumeLayout(false);
             this.grpBoxGestionXMLs.ResumeLayout(false);
             this.grpBoxMail.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -230,6 +255,8 @@
         private System.Windows.Forms.Button btnFormMail;
         private System.Windows.Forms.Button btnAsimetricDecrypt;
         private System.Windows.Forms.Button btnAsimetricEncrypt;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSimpleWaitForm;
     }
 }
 

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionXML", "GestionXML\Ge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCorreo", "GestionCorreo\GestionCorreo.csproj", "{DE92AF4C-59D0-4610-BC97-19A80275BB5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaitForms", "WaitForms\WaitForms.csproj", "{8C02E022-3B18-4D35-8E57-DB8697DD268F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE92AF4C-59D0-4610-BC97-19A80275BB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C02E022-3B18-4D35-8E57-DB8697DD268F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

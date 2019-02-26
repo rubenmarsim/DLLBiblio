@@ -20,6 +20,7 @@ namespace FormPrueba
         ZIP.ZIPClass CZIP;
         GestionXML.GestionXMLClass CGestionXML;
         FormMail formMail;
+        WaitForms.SimpleWF.CSimpleWF SimpleWF;
         #endregion
 
         #region Constructores
@@ -134,6 +135,18 @@ namespace FormPrueba
             formMail = new FormMail();
             formMail.Show();
         }
+        /// <summary>
+        /// Se ejecuta cuando pulsamos el boton Procesos, el cual muestra el waitform 
+        /// y un messagebox para que de tiempo a ver el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSimpleWaitForm_Click(object sender, EventArgs e)
+        {
+            SimpleWF.Show();
+            MessageBox.Show("Prueba Simple Wait Form");
+            SimpleWF.Close();
+        }
         #endregion
 
         #region Methods
@@ -145,7 +158,8 @@ namespace FormPrueba
             CRSA = new GestionRSA.RSAClass();
             CZIP = new ZIP.ZIPClass();
             CGestionXML = new GestionXML.GestionXMLClass();
+            SimpleWF = new WaitForms.SimpleWF.CSimpleWF();
         }
-        #endregion
+        #endregion        
     }
 }
