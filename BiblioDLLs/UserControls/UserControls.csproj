@@ -44,11 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowsForms\UCTextBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\UCTextBoxBase.Designer.cs">
+      <DependentUpon>UCTextBoxBase.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WindowsForms\" />
     <Folder Include="WPF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WindowsForms\UCTextBoxBase.resx">
+      <DependentUpon>UCTextBoxBase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
