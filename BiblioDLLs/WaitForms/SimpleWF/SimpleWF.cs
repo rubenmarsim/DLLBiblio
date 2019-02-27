@@ -11,15 +11,24 @@ using System.Windows.Forms;
 namespace WaitForms.SimpleWF
 {
     /// <summary>
-    /// Form que 
+    /// Form modal que muestra un gift mediante un hilo, mientras se hace un proceso por detras
     /// </summary>
     public partial class SimpleWF : Form
     {
+        /// <summary>
+        /// Constructor por defecto del WaitForm, ademas se ha añadido la posicion inicial
+        /// del Form, que en este caso sera el centro
+        /// </summary>
         public SimpleWF()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
         }
+        /// <summary>
+        /// Segundo constructor del WaitForm, el cual define la posicion del WaitForm segun
+        /// el Form padre y si no hay form padre lo pone en el centro
+        /// </summary>
+        /// <param name="parent">Form padre desde el cual se llama al WaitForm</param>
         public SimpleWF(Form parent)
         {
             InitializeComponent();
@@ -33,6 +42,9 @@ namespace WaitForms.SimpleWF
                 this.StartPosition = FormStartPosition.CenterParent;
             }
         }
+        /// <summary>
+        /// Cierra el WaitForm y limpia la imagen
+        /// </summary>
         public void CloseLoadingForm()
         {
             this.DialogResult = DialogResult.OK;
