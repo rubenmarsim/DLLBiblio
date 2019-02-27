@@ -83,7 +83,25 @@
         </member>
         <member name="T:WaitForms.SimpleWF.SimpleWF">
             <summary>
-            Form que 
+            Form modal que muestra un gift mediante un hilo, mientras se hace un proceso por detras
+            </summary>
+        </member>
+        <member name="M:WaitForms.SimpleWF.SimpleWF.#ctor">
+            <summary>
+            Constructor por defecto del WaitForm, ademas se ha añadido la posicion inicial
+            del Form, que en este caso sera el centro
+            </summary>
+        </member>
+        <member name="M:WaitForms.SimpleWF.SimpleWF.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            Segundo constructor del WaitForm, el cual define la posicion del WaitForm segun
+            el Form padre y si no hay form padre lo pone en el centro
+            </summary>
+            <param name="parent">Form padre desde el cual se llama al WaitForm</param>
+        </member>
+        <member name="M:WaitForms.SimpleWF.SimpleWF.CloseLoadingForm">
+            <summary>
+            Cierra el WaitForm y limpia la imagen
             </summary>
         </member>
         <member name="F:WaitForms.SimpleWF.SimpleWF.components">
