@@ -94,6 +94,10 @@
       <Project>{c48ed5d8-8265-4f54-91a1-ef1b21c64bed}</Project>
       <Name>Gestion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UserControls\UserControls.csproj">
+      <Project>{575B745F-8C2B-402D-9C78-3FA7C423B0E0}</Project>
+      <Name>UserControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WaitForms\WaitForms.csproj">
       <Project>{8c02e022-3b18-4d35-8e57-db8697dd268f}</Project>
       <Name>WaitForms</Name>

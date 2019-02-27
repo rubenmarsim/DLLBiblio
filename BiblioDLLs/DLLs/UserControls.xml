@@ -4,18 +4,60 @@
         <name>UserControls</name>
     </assembly>
     <members>
-        <member name="F:UserControls.UserControl1.components">
+        <member name="T:UserControls.WindowsForms.UCTextBoxBase">
+            <summary>
+            TextBox Base que contiene las funciones mas genericas para que los demas
+            TextBos puedan heredar
+            </summary>
+        </member>
+        <member name="P:UserControls.WindowsForms.UCTextBoxBase.IsRequired">
+            <summary>
+            Si es true no deja salir del TextBox sin escribir nada
+            </summary>
+        </member>
+        <member name="P:UserControls.WindowsForms.UCTextBoxBase.ChangeColorWhenFocus">
+            <summary>
+            Cambia de color cuando recive el focus, y lo pierde a la vez que el focus
+            </summary>
+        </member>
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.#ctor">
+            <summary>
+            Constructor por defecto
+            </summary>
+        </member>
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.UCtxtBoxBase_Validating(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Se ejecuta cuando el TextBox se esta validando
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.UCtxtBoxBase_Enter(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando el TextBox Recive el focus
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.UCtxtBoxBase_Leave(System.Object,System.EventArgs)">
+            <summary>
+            Se ejecuta cuando el TextBox pierde el focus
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:UserControls.WindowsForms.UCTextBoxBase.components">
             <summary>
             Variable del diseñador necesaria.
             </summary>
         </member>
-        <member name="M:UserControls.UserControl1.Dispose(System.Boolean)">
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.Dispose(System.Boolean)">
             <summary>
             Limpiar los recursos que se estén usando.
             </summary>
             <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         </member>
-        <member name="M:UserControls.UserControl1.InitializeComponent">
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.InitializeComponent">
             <summary>
             Método necesario para admitir el Diseñador. No se puede modificar
             el contenido de este método con el editor de código.
