@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UserControls
+namespace UserControls.WindowsForms
 {
-    public partial class UserControl1: UserControl
+    public partial class NumericTextBox : UserControl
     {
-        public UserControl1()
+        public NumericTextBox()
         {
             InitializeComponent();
         }
