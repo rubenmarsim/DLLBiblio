@@ -160,6 +160,11 @@ namespace FormPrueba
             CGestionXML = new Gestion.GestionArchivos.GestionXML();
             SimpleWF = new WaitForms.SimpleWF.CSimpleWF();
         }
-        #endregion        
+        #endregion
+
+        private void uctxtBoxUno_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

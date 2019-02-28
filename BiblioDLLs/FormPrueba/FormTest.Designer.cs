@@ -44,6 +44,7 @@
             this.btnFormMail = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSimpleWaitForm = new System.Windows.Forms.Button();
+            this.uctxtBoxUno = new UserControls.WindowsForms.UCTextBoxBase();
             this.grpBoxRSA.SuspendLayout();
             this.grpBoxZIP.SuspendLayout();
             this.grpBoxGestionXMLs.SuspendLayout();
@@ -217,11 +218,23 @@
             this.btnSimpleWaitForm.UseVisualStyleBackColor = true;
             this.btnSimpleWaitForm.Click += new System.EventHandler(this.btnSimpleWaitForm_Click);
             // 
+            // uctxtBoxUno
+            // 
+            this.uctxtBoxUno.ChangeColorWhenFocus = true;
+            this.uctxtBoxUno.IsRequired = true;
+            this.uctxtBoxUno.Location = new System.Drawing.Point(309, 229);
+            this.uctxtBoxUno.Name = "uctxtBoxUno";
+            this.uctxtBoxUno.Size = new System.Drawing.Size(227, 20);
+            this.uctxtBoxUno.TabIndex = 5;
+            this.uctxtBoxUno.Text = "User Control Text Box 1";
+            this.uctxtBoxUno.Enter += new System.EventHandler(this.uctxtBoxUno_Enter);
+            // 
             // frmPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.uctxtBoxUno);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpBoxMail);
             this.Controls.Add(this.grpBoxGestionXMLs);
@@ -236,6 +249,7 @@
             this.grpBoxMail.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,6 +271,7 @@
         private System.Windows.Forms.Button btnAsimetricEncrypt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSimpleWaitForm;
+        private UserControls.WindowsForms.UCTextBoxBase uctxtBoxUno;
     }
 }
 

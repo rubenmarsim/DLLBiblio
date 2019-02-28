@@ -46,6 +46,11 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.ChargeEvents">
+            <summary>
+            Carga los eventos en el constructor para que se ejecuten
+            </summary>
+        </member>
         <member name="F:UserControls.WindowsForms.UCTextBoxBase.components">
             <summary>
             Variable del diseñador necesaria.

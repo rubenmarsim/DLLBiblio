@@ -44,6 +44,7 @@ namespace UserControls.WindowsForms
         public UCTextBoxBase()
         {
             InitializeComponent();
+            ChargeEvents();
         }
         #endregion
 
@@ -88,7 +89,15 @@ namespace UserControls.WindowsForms
         #endregion
 
         #region Methods
-
+        /// <summary>
+        /// Carga los eventos en el constructor para que se ejecuten
+        /// </summary>
+        private void ChargeEvents()
+        {
+            this.Validating += new System.ComponentModel.CancelEventHandler(UCtxtBoxBase_Validating);
+            this.Enter += new EventHandler(UCtxtBoxBase_Enter);
+            this.Leave += new EventHandler(UCtxtBoxBase_Leave);
+        }
         #endregion
     }
 }
