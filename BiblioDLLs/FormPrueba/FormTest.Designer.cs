@@ -220,9 +220,9 @@
             // 
             // uctxtBoxUno
             // 
+            this.uctxtBoxUno.bUseDecimals = true;
             this.uctxtBoxUno.ChangeColorWhenFocus = false;
-            this.uctxtBoxUno.IsOnlyDoubles = true;
-            this.uctxtBoxUno.IsOnlyIntegers = true;
+            this.uctxtBoxUno.IsNumeric = false;
             this.uctxtBoxUno.IsRequired = false;
             this.uctxtBoxUno.Location = new System.Drawing.Point(309, 229);
             this.uctxtBoxUno.Name = "uctxtBoxUno";

@@ -44,26 +44,26 @@ namespace UserControls.WindowsForms
         /// <summary>
         /// Si es true solo deja introducir valores numericos enteros
         /// </summary>
-        private bool _IsOnlyIntegers;
+        private bool _IsNumeric;
         /// <summary>
         /// Si es true solo deja introducir valores numericos enteros
         /// </summary>
-        public bool IsOnlyIntegers
+        public bool IsNumeric
         {
-            get { return _IsOnlyIntegers; }
-            set { _IsOnlyIntegers = value; }
+            get { return _IsNumeric; }
+            set { _IsNumeric = value; }
         }
         /// <summary>
-        /// Si es true solo deja introducir valores numericos enteros
+        /// Si es true deja añadir decimales
         /// </summary>
-        private bool _IsOnlyDoubles;
+        private bool _bUseDecimals;
         /// <summary>
-        /// Si es true solo deja introducir valores numericos enteros
+        /// Si es true deja añadir decimales
         /// </summary>
-        public bool IsOnlyDoubles
+        public bool bUseDecimals
         {
-            get { return _IsOnlyDoubles; }
-            set { _IsOnlyDoubles = value; }
+            get { return _bUseDecimals; }
+            set { _bUseDecimals = value; }
         }
         #endregion
 
@@ -124,31 +124,21 @@ namespace UserControls.WindowsForms
         /// <param name="e"></param>
         private void UCtxtBoxBase_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (IsOnlyIntegers)
+            if (IsNumeric)
             {
                 if (char.IsDigit(e.KeyChar))
                     e.Handled = false;
                 else if (char.IsControl(e.KeyChar))
                     e.Handled = false;
-                else if (char.IsSeparator(e.KeyChar))
-                    e.Handled = true;
-                else
-                    e.Handled = true;
-            }else if (IsOnlyDoubles)
-            {
-                if (char.IsDigit(e.KeyChar))
-                    e.Handled = false;
-                else if (char.IsControl(e.KeyChar))
-                    e.Handled = false;
-                else if (char.IsSeparator(e.KeyChar))
-                    e.Handled = true;
-                else if (char.IsPunctuation(e.KeyChar))
+                else if (char.IsPunctuation(e.KeyChar) && bUseDecimals)
                 {
                     if (e.KeyChar == '.' || e.KeyChar == ',')
                         e.Handled = false;
                     else
                         e.Handled = true;
-                }                    
+                }
+                else if (char.IsSeparator(e.KeyChar))
+                    e.Handled = true;
                 else
                     e.Handled = true;
             }
