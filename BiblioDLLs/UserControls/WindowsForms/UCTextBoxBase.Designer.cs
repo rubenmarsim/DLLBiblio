@@ -38,6 +38,7 @@
             this.UCtxtBoxBase.Size = new System.Drawing.Size(100, 20);
             this.UCtxtBoxBase.TabIndex = 0;
             this.UCtxtBoxBase.Enter += new System.EventHandler(this.UCtxtBoxBase_Enter);
+            this.UCtxtBoxBase.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UCtxtBoxBase_KeyPress);
             this.UCtxtBoxBase.Leave += new System.EventHandler(this.UCtxtBoxBase_Leave);
             this.UCtxtBoxBase.Validating += new System.ComponentModel.CancelEventHandler(this.UCtxtBoxBase_Validating);
             this.ResumeLayout(false);

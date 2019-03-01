@@ -17,6 +17,9 @@ namespace UserControls.WindowsForms
     public partial class UCTextBoxBase : TextBox
     {
         #region Properties
+        /// <summary>
+        /// Si es true no deja salir del TextBox sin escribir nada
+        /// </summary>
         private bool _IsRequired;
         /// <summary>
         /// Si es true no deja salir del TextBox sin escribir nada
@@ -26,6 +29,9 @@ namespace UserControls.WindowsForms
             get { return _IsRequired; }
             set { _IsRequired = value; }
         }
+        /// <summary>
+        /// Cambia de color cuando recive el focus, y lo pierde a la vez que el focus
+        /// </summary>
         private bool _ChangeColorWhenFocus;
         /// <summary>
         /// Cambia de color cuando recive el focus, y lo pierde a la vez que el focus
@@ -34,6 +40,18 @@ namespace UserControls.WindowsForms
         {
             get { return _ChangeColorWhenFocus; }
             set { _ChangeColorWhenFocus = value; }
+        }
+        /// <summary>
+        /// Si es true solo deja introducir valores numericos
+        /// </summary>
+        private bool _IsNumeric;
+        /// <summary>
+        /// Si es true solo deja introducir valores numericos
+        /// </summary>
+        public bool IsNumeric
+        {
+            get { return _IsNumeric; }
+            set { _IsNumeric = value; }
         }
         #endregion
 
@@ -86,6 +104,28 @@ namespace UserControls.WindowsForms
         {
             if (ChangeColorWhenFocus) BackColor = Color.White;
         }
+        /// <summary>
+        /// Se ejecuta cuando el TextBox tiene el focus y se presiona y
+        /// se suelta una tecla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UCtxtBoxBase_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (IsNumeric)
+            {
+                if (char.IsDigit(e.KeyChar))
+                    e.Handled = false;
+                else if (char.IsControl(e.KeyChar))
+                    e.Handled = false;
+                else if (char.IsSeparator(e.KeyChar))
+                    e.Handled = true;
+                //else if (char.IsPunctuation(e.KeyChar))
+                //    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
+        }
         #endregion
 
         #region Methods
@@ -97,7 +137,10 @@ namespace UserControls.WindowsForms
             this.Validating += new System.ComponentModel.CancelEventHandler(UCtxtBoxBase_Validating);
             this.Enter += new EventHandler(UCtxtBoxBase_Enter);
             this.Leave += new EventHandler(UCtxtBoxBase_Leave);
+            this.KeyPress += new KeyPressEventHandler(UCtxtBoxBase_KeyPress);
         }
         #endregion
+
+        
     }
 }

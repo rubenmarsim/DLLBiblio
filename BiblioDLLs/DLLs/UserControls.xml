@@ -10,14 +10,34 @@
             TextBos puedan heredar
             </summary>
         </member>
+        <member name="F:UserControls.WindowsForms.UCTextBoxBase._IsRequired">
+            <summary>
+            Si es true no deja salir del TextBox sin escribir nada
+            </summary>
+        </member>
         <member name="P:UserControls.WindowsForms.UCTextBoxBase.IsRequired">
             <summary>
             Si es true no deja salir del TextBox sin escribir nada
             </summary>
         </member>
+        <member name="F:UserControls.WindowsForms.UCTextBoxBase._ChangeColorWhenFocus">
+            <summary>
+            Cambia de color cuando recive el focus, y lo pierde a la vez que el focus
+            </summary>
+        </member>
         <member name="P:UserControls.WindowsForms.UCTextBoxBase.ChangeColorWhenFocus">
             <summary>
             Cambia de color cuando recive el focus, y lo pierde a la vez que el focus
+            </summary>
+        </member>
+        <member name="F:UserControls.WindowsForms.UCTextBoxBase._IsNumeric">
+            <summary>
+            Si es true solo deja introducir valores numericos
+            </summary>
+        </member>
+        <member name="P:UserControls.WindowsForms.UCTextBoxBase.IsNumeric">
+            <summary>
+            Si es true solo deja introducir valores numericos
             </summary>
         </member>
         <member name="M:UserControls.WindowsForms.UCTextBoxBase.#ctor">
@@ -42,6 +62,14 @@
         <member name="M:UserControls.WindowsForms.UCTextBoxBase.UCtxtBoxBase_Leave(System.Object,System.EventArgs)">
             <summary>
             Se ejecuta cuando el TextBox pierde el focus
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:UserControls.WindowsForms.UCTextBoxBase.UCtxtBoxBase_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Se ejecuta cuando el TextBox tiene el focus y se presiona y
+            se suelta una tecla
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

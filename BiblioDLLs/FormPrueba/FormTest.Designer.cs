@@ -220,8 +220,9 @@
             // 
             // uctxtBoxUno
             // 
-            this.uctxtBoxUno.ChangeColorWhenFocus = true;
-            this.uctxtBoxUno.IsRequired = true;
+            this.uctxtBoxUno.ChangeColorWhenFocus = false;
+            this.uctxtBoxUno.IsNumeric = true;
+            this.uctxtBoxUno.IsRequired = false;
             this.uctxtBoxUno.Location = new System.Drawing.Point(309, 229);
             this.uctxtBoxUno.Name = "uctxtBoxUno";
             this.uctxtBoxUno.Size = new System.Drawing.Size(227, 20);
