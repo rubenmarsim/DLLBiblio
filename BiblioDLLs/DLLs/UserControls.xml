@@ -30,14 +30,24 @@
             Cambia de color cuando recive el focus, y lo pierde a la vez que el focus
             </summary>
         </member>
-        <member name="F:UserControls.WindowsForms.UCTextBoxBase._IsNumeric">
+        <member name="F:UserControls.WindowsForms.UCTextBoxBase._IsOnlyIntegers">
             <summary>
-            Si es true solo deja introducir valores numericos
+            Si es true solo deja introducir valores numericos enteros
             </summary>
         </member>
-        <member name="P:UserControls.WindowsForms.UCTextBoxBase.IsNumeric">
+        <member name="P:UserControls.WindowsForms.UCTextBoxBase.IsOnlyIntegers">
             <summary>
-            Si es true solo deja introducir valores numericos
+            Si es true solo deja introducir valores numericos enteros
+            </summary>
+        </member>
+        <member name="F:UserControls.WindowsForms.UCTextBoxBase._IsOnlyDoubles">
+            <summary>
+            Si es true solo deja introducir valores numericos enteros
+            </summary>
+        </member>
+        <member name="P:UserControls.WindowsForms.UCTextBoxBase.IsOnlyDoubles">
+            <summary>
+            Si es true solo deja introducir valores numericos enteros
             </summary>
         </member>
         <member name="M:UserControls.WindowsForms.UCTextBoxBase.#ctor">

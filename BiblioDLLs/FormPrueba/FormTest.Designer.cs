@@ -221,7 +221,8 @@
             // uctxtBoxUno
             // 
             this.uctxtBoxUno.ChangeColorWhenFocus = false;
-            this.uctxtBoxUno.IsNumeric = true;
+            this.uctxtBoxUno.IsOnlyDoubles = true;
+            this.uctxtBoxUno.IsOnlyIntegers = true;
             this.uctxtBoxUno.IsRequired = false;
             this.uctxtBoxUno.Location = new System.Drawing.Point(309, 229);
             this.uctxtBoxUno.Name = "uctxtBoxUno";
