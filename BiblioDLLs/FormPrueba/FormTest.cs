@@ -21,6 +21,7 @@ namespace FormPrueba
         Gestion.GestionArchivos.GestionXML CGestionXML;
         FormMail formMail;
         WaitForms.SimpleWF.CSimpleWF SimpleWF;
+        UserControls.WindowsForms.UCTextBoxBase UCTextBoxBase;
         #endregion
 
         #region Constructores
@@ -159,12 +160,16 @@ namespace FormPrueba
             CZIP = new Gestion.GestionArchivos.ZIPClass();
             CGestionXML = new Gestion.GestionArchivos.GestionXML();
             SimpleWF = new WaitForms.SimpleWF.CSimpleWF();
+            UCTextBoxBase = new UserControls.WindowsForms.UCTextBoxBase();
         }
         #endregion
 
-        private void uctxtBoxUno_Enter(object sender, EventArgs e)
+        private void uctxtBoxUno_Validating(object sender, CancelEventArgs e)
         {
-
+            if (UCTextBoxBase.ErrorIsRequired)
+            {
+                errorProvider1.SetError(uctxtBoxUno, "Campo Obligatorio");
+            }
         }
     }
 }

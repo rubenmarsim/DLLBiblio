@@ -29,6 +29,18 @@ namespace UserControls.WindowsForms
             get { return _IsRequired; }
             set { _IsRequired = value; }
         }
+        private bool _ErrorIsRequired;
+        /// <summary>
+        /// Sirve para saber cuando estamos incumpliendo la propiedad IsRequired
+        /// (Entonces estara true)
+        /// esto lo podemos aprovechar con un errorProvider o algo asi
+        /// </summary>
+        public bool ErrorIsRequired
+        {
+            get { return _ErrorIsRequired; }
+            set { _ErrorIsRequired = value; }
+        }
+
         /// <summary>
         /// Cambia de color cuando recive el focus, y lo pierde a la vez que el focus
         /// </summary>
@@ -95,6 +107,12 @@ namespace UserControls.WindowsForms
                 if (Text.Length == 0)
                 {
                     e.Cancel = true;
+                    ErrorIsRequired = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                    ErrorIsRequired = false;
                 }
             }
         }

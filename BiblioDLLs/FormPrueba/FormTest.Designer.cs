@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grpBoxRSA = new System.Windows.Forms.GroupBox();
             this.btnSaveOnDB = new System.Windows.Forms.Button();
             this.btnReadRSAKeys = new System.Windows.Forms.Button();
@@ -45,11 +46,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSimpleWaitForm = new System.Windows.Forms.Button();
             this.uctxtBoxUno = new UserControls.WindowsForms.UCTextBoxBase();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpBoxRSA.SuspendLayout();
             this.grpBoxZIP.SuspendLayout();
             this.grpBoxGestionXMLs.SuspendLayout();
             this.grpBoxMail.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBoxRSA
@@ -223,13 +226,17 @@
             this.uctxtBoxUno.bUseDecimals = true;
             this.uctxtBoxUno.ChangeColorWhenFocus = false;
             this.uctxtBoxUno.IsNumeric = false;
-            this.uctxtBoxUno.IsRequired = false;
+            this.uctxtBoxUno.IsRequired = true;
             this.uctxtBoxUno.Location = new System.Drawing.Point(309, 229);
             this.uctxtBoxUno.Name = "uctxtBoxUno";
             this.uctxtBoxUno.Size = new System.Drawing.Size(227, 20);
             this.uctxtBoxUno.TabIndex = 5;
             this.uctxtBoxUno.Text = "User Control Text Box 1";
-            this.uctxtBoxUno.Enter += new System.EventHandler(this.uctxtBoxUno_Enter);
+            this.uctxtBoxUno.Validating += new System.ComponentModel.CancelEventHandler(this.uctxtBoxUno_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmPrueba
             // 
@@ -250,6 +257,7 @@
             this.grpBoxGestionXMLs.ResumeLayout(false);
             this.grpBoxMail.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,6 +282,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSimpleWaitForm;
         private UserControls.WindowsForms.UCTextBoxBase uctxtBoxUno;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
